@@ -182,21 +182,12 @@ class Updater {
 	public function rename_github_zip_directory( $source, $remote_source, $upgrader ) {
 		global $wp_filesystem;
 
-		// Check if we are updating our plugin
-		if ( ! isset( $_GET['plugin'] ) && ! isset( $_POST['plugins'] ) ) {
+		// If the extracted folder contains our GitHub repo name, it's our plugin
+		if ( strpos( $source, 'opareklama-soldis-real-estate-landing' ) === false ) {
 			return $source;
 		}
 
-		$plugin = isset( $_GET['plugin'] ) ? $_GET['plugin'] : '';
-		if ( empty( $plugin ) && isset( $_POST['plugins'] ) ) {
-			$plugin = is_array( $_POST['plugins'] ) ? $_POST['plugins'][0] : $_POST['plugins'];
-		}
-
-		if ( strpos( $plugin, 'soldis-landing' ) === false && strpos( $source, 'opareklama-soldis-real-estate-landing' ) === false ) {
-			return $source;
-		}
-
-		// GitHub zip folder name usually looks like `opareklama-soldis-real-estate-landing-1234567/`
+		// Correct the folder name to 'soldis-landing/'
 		$corrected_source = trailingslashit( $remote_source ) . 'soldis-landing/';
 
 		if ( $wp_filesystem->move( $source, $corrected_source, true ) ) {
