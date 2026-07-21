@@ -42,29 +42,36 @@ $company    = ! empty( $global['company_name'] ) ? $global['company_name'] : 'SO
 
 // ─── Homepage Progress ────────────────────────────────────────────────────────
 $homepage_sections = array(
-	array( 'label' => 'Hero',       'icon' => '🏠', 'key' => 'soldis_hero_settings',       'flag' => 'enable_hero',       'built' => true ),
-	array( 'label' => 'Apie Mus',   'icon' => '⭐', 'key' => 'soldis_whysoldis_settings',  'flag' => 'enable_whysoldis',  'built' => true ),
-	array( 'label' => 'Benefits',   'icon' => '✅', 'key' => 'soldis_benefits_settings',   'flag' => 'enable_benefits',   'built' => true ),
-	array( 'label' => 'Process',    'icon' => '🔄', 'key' => 'soldis_process_settings',    'flag' => 'enable_process',    'built' => true ),
-	array( 'label' => 'Investment', 'icon' => '💰', 'key' => 'soldis_investment_settings', 'flag' => 'enable_investment', 'built' => true ),
-	array( 'label' => 'Guarantee',  'icon' => '🛡️', 'key' => '',                           'flag' => '',                  'built' => false ),
-	array( 'label' => 'Pricing',    'icon' => '💳', 'key' => '',                           'flag' => '',                  'built' => false ),
-	array( 'label' => 'FAQ',        'icon' => '❓', 'key' => 'soldis_faq_settings',        'flag' => 'enable_faq',        'built' => true ),
-	array( 'label' => 'CTA',        'icon' => '📣', 'key' => '',                           'flag' => '',                  'built' => false ),
-	array( 'label' => 'Footer',     'icon' => '📋', 'key' => 'soldis_footer_settings',     'flag' => 'enable_footer',     'built' => true ),
+	array( 'label' => 'Hero',       'icon' => '🏠', 'key' => 'soldis_hero_settings',       'flag' => 'enable_hero',       'default' => true ),
+	array( 'label' => 'Apie Mus',   'icon' => '⭐', 'key' => 'soldis_whysoldis_settings',  'flag' => 'enable_whysoldis',  'default' => true ),
+	array( 'label' => 'Benefits',   'icon' => '✅', 'key' => 'soldis_benefits_settings',   'flag' => 'enable_benefits',   'default' => true ),
+	array( 'label' => 'Process',    'icon' => '🔄', 'key' => 'soldis_process_settings',    'flag' => 'enable_process',    'default' => true ),
+	array( 'label' => 'Investment', 'icon' => '💰', 'key' => 'soldis_investment_settings', 'flag' => 'enable_investment', 'default' => true ),
+	array( 'label' => 'FAQ',        'icon' => '❓', 'key' => 'soldis_faq_settings',        'flag' => 'enable_faq',        'default' => true ),
+	array( 'label' => 'Footer',     'icon' => '📋', 'key' => 'soldis_footer_settings',     'flag' => 'enable_footer',     'default' => true ),
 );
 
 $sections_active = 0;
 $sections_built  = 0;
 foreach ( $homepage_sections as &$s ) {
-	if ( ! $s['built'] ) {
-		$s['status'] = 'coming';
+	$opts = get_option( $s['key'] );
+	
+	if ( false === $opts ) {
+		$is_active = $s['default'];
 	} else {
-		$opts        = get_option( $s['key'], array() );
-		$s['status'] = ! empty( $opts[ $s['flag'] ] ) ? 'active' : 'off';
-		if ( $s['status'] === 'active' ) $sections_active++;
-		$sections_built++;
+		if ( isset( $opts[ $s['flag'] ] ) ) {
+			$is_active = ! empty( $opts[ $s['flag'] ] );
+		} else {
+			$is_active = $s['default'];
+		}
 	}
+
+	$s['status'] = $is_active ? 'active' : 'off';
+	
+	if ( $is_active ) {
+		$sections_active++;
+	}
+	$sections_built++;
 }
 unset( $s );
 $progress_pct = $sections_built > 0 ? round( ( $sections_active / count( $homepage_sections ) ) * 100 ) : 0;
@@ -697,10 +704,9 @@ endforeach; ?>
 				<?php defined( 'ABSPATH' ) || exit;
 
 printf(
-					esc_html__( '%1$d of %2$d sections built. %3$d sections coming soon.', 'soldis-landing' ),
-					(int) $sections_built,
-					count( $homepage_sections ),
-					(int) ( count( $homepage_sections ) - $sections_built )
+					esc_html__( '%1$d of %2$d sections active on the homepage.', 'soldis-landing' ),
+					(int) $sections_active,
+					count( $homepage_sections )
 				); ?>
 				&ensp;·&ensp;
 				<a href="<?php defined( 'ABSPATH' ) || exit;
