@@ -5,11 +5,12 @@
  * Description:       A premium, production-ready landing page system developed by OPA Reklama.
  * Version:           1.0.0
  * Author:            OPA Reklama
- * Author URI:        https://opareklama.com
+ * Author URI:        https://opareklama.lt/
  * License:           Proprietary
- * License URI:       https://opareklama.com
  * Text Domain:       soldis-landing
  * Domain Path:       /languages
+ * GitHub Plugin URI: https://github.com/opareklama/soldis-real-estate-landing
+ * Primary Branch:    main
  */
 
 // If this file is called directly, abort.
