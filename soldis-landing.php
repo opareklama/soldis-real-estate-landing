@@ -5,7 +5,7 @@ defined( 'ABSPATH' ) || exit;
  * Plugin Name:       SOLDIS Landing
  * Plugin URI:        https://opareklama.com
  * Description:       A premium, production-ready landing page system developed by OPA Reklama.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            OPA Reklama
  * Author URI:        https://opareklama.lt/
  * License:           Proprietary
@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! defined( 'SOLDIS_LANDING_VERSION' ) ) {
-	define( 'SOLDIS_LANDING_VERSION', '1.0.0' );
+	define( 'SOLDIS_LANDING_VERSION', '1.0.1' );
 }
 define( 'SOLDIS_LANDING_PATH', plugin_dir_path( __FILE__ ) );
 define( 'SOLDIS_LANDING_URL', plugin_dir_url( __FILE__ ) );
