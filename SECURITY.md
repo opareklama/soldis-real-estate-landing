@@ -1,7 +1,12 @@
 # Security Policy
 
 ## Supported Versions
-Only the latest version of this plugin is supported with security updates.
+| Version | Supported          |
+| ------- | ------------------ |
+| 1.0.x   | :white_check_mark: |
+| < 1.0   | :x:                |
 
 ## Reporting a Vulnerability
-If you discover any security related issues, please do not use the public issue tracker. Contact OPA Reklama directly to report the vulnerability.
+At OPA Reklama, security is a primary engineering directive. If you discover a security vulnerability within this project, please send an email to the OPA Reklama security team. We will review all reports and issue a patch if a valid vulnerability is identified.
+
+Please do not disclose security-related issues publicly until a fix has been distributed.
