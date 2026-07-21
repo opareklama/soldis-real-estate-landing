@@ -1,8 +1,10 @@
 <?php
 
+namespace OpaReklama\SoldisLanding\Modules\Homepage\Sections\Process;
+
 defined( 'ABSPATH' ) || exit;
 
-namespace OpaReklama\SoldisLanding\Modules\Homepage\Sections\Process;
+
 
 /**
  * The Process renderer manager.

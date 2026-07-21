@@ -1,8 +1,10 @@
 <?php
 
+namespace OpaReklama\SoldisLanding\Modules\Homepage\Sections\Hero;
+
 defined( 'ABSPATH' ) || exit;
 
-namespace OpaReklama\SoldisLanding\Modules\Homepage\Sections\Hero;
+
 
 /**
  * The Hero Admin settings.

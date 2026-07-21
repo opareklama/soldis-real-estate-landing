@@ -1,8 +1,10 @@
 <?php
 
+namespace OpaReklama\SoldisLanding\Modules\Homepage\Sections\Benefits;
+
 defined( 'ABSPATH' ) || exit;
 
-namespace OpaReklama\SoldisLanding\Modules\Homepage\Sections\Benefits;
+
 
 /**
  * The Benefits section manager.

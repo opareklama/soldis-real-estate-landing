@@ -1,8 +1,10 @@
 <?php
 
+namespace OpaReklama\SoldisLanding\Modules\Homepage\Sections\Faq;
+
 defined( 'ABSPATH' ) || exit;
 
-namespace OpaReklama\SoldisLanding\Modules\Homepage\Sections\Faq;
+
 
 /**
  * The FAQ Frontend manager.

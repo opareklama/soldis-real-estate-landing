@@ -1,8 +1,10 @@
 <?php
 
+namespace OpaReklama\SoldisLanding\Foundation;
+
 defined( 'ABSPATH' ) || exit;
 
-namespace OpaReklama\SoldisLanding\Foundation;
+
 
 /**
  * Fired during plugin deactivation.

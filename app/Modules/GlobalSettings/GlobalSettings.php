@@ -1,8 +1,10 @@
 <?php
 
+namespace OpaReklama\SoldisLanding\Modules\GlobalSettings;
+
 defined( 'ABSPATH' ) || exit;
 
-namespace OpaReklama\SoldisLanding\Modules\GlobalSettings;
+
 
 /**
  * The Global Settings module.

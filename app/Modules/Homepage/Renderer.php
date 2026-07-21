@@ -1,8 +1,10 @@
 <?php
 
+namespace OpaReklama\SoldisLanding\Modules\Homepage;
+
 defined( 'ABSPATH' ) || exit;
 
-namespace OpaReklama\SoldisLanding\Modules\Homepage;
+
 
 use OpaReklama\SoldisLanding\Modules\Homepage\Sections\Hero\Renderer as HeroRenderer;
 use OpaReklama\SoldisLanding\Modules\Homepage\Sections\WhySoldis\Renderer as WhySoldisRenderer;

@@ -1,8 +1,10 @@
 <?php
 
+namespace OpaReklama\SoldisLanding\Admin;
+
 defined( 'ABSPATH' ) || exit;
 
-namespace OpaReklama\SoldisLanding\Admin;
+
 
 /**
  * The admin manager.

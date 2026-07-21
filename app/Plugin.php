@@ -1,8 +1,10 @@
 <?php
 
+namespace OpaReklama\SoldisLanding;
+
 defined( 'ABSPATH' ) || exit;
 
-namespace OpaReklama\SoldisLanding;
+
 
 use OpaReklama\SoldisLanding\Admin\Admin;
 use OpaReklama\SoldisLanding\Modules\Header\Header;

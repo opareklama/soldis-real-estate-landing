@@ -1,8 +1,10 @@
 <?php
 
+namespace OpaReklama\SoldisLanding\Modules\Homepage;
+
 defined( 'ABSPATH' ) || exit;
 
-namespace OpaReklama\SoldisLanding\Modules\Homepage;
+
 
 use OpaReklama\SoldisLanding\Modules\Homepage\Sections\Hero\Admin as HeroAdmin;
 use OpaReklama\SoldisLanding\Modules\Homepage\Sections\WhySoldis\Admin as WhySoldisAdmin;

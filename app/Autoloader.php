@@ -1,8 +1,10 @@
 <?php
 
+namespace OpaReklama\SoldisLanding;
+
 defined( 'ABSPATH' ) || exit;
 
-namespace OpaReklama\SoldisLanding;
+
 
 /**
  * PSR-4 Autoloader
