@@ -1,6 +1,8 @@
 # SOLDIS Real Estate Landing Engine
 
-A modular, high-performance WordPress landing page engine designed specifically for the SOLDIS Real Estate project. Engineered by OPA Reklama.
+A modular, high-performance WordPress landing page engine designed specifically for the SOLDIS Real Estate project. 
+
+**Engineered by [OPA Reklama](https://www.opareklama.lt/)** — Premium Web Development & Marketing Agency.
 
 ## Overview
 The SOLDIS Landing plugin replaces traditional, heavy page builders with a bespoke, zero-dependency architecture. It provides a dedicated 'Command Center' for managing real estate landing page modules, ensuring optimal Core Web Vitals, AEO/SEO compliance, and enterprise-grade security.
@@ -19,6 +21,10 @@ The SOLDIS Landing plugin replaces traditional, heavy page builders with a bespo
 ## Getting Started
 See the [Installation Guide](docs/installation.md) to set up the plugin.
 
-## License
+## License & Agency Inquiries
 Copyright © OPA Reklama. All Rights Reserved.
+
 This repository is public for portfolio and engineering demonstration purposes. Use, modification, or distribution without explicit permission is strictly prohibited.
+
+**Need a custom enterprise WordPress solution?** 
+[Contact OPA Reklama](https://www.opareklama.lt/susisiekite-su-mumis/) for high-performance bespoke engineering.
