@@ -51,9 +51,20 @@ class Plugin {
 	protected $footer;
 
 	/**
+	 * The GitHub Updater instance.
+	 */
+	protected $updater;
+
+	/**
 	 * Initialize the plugin.
 	 */
 	public function __construct() {
+		$this->activator   = new Foundation\Activator();
+		$this->deactivator = new Foundation\Deactivator();
+		$this->updater     = new Foundation\Updater();
+
+		// Run the updater
+		$this->updater->run();
 		$this->admin           = new Admin();
 		$this->global_settings = new Modules\GlobalSettings\GlobalSettings();
 		$this->header          = new Header();

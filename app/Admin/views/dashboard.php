@@ -160,6 +160,24 @@ $changelog = array(
 	array( 'v' => '1.0.05', 'date' => '2026-07-16', 'note' => 'Hero section — full viewport with animated CTA' ),
 );
 
+// ─── GitHub Updater ──────────────────────────────────────────────────────────
+$github_transient = get_transient( 'soldis_landing_github_release' );
+$github_latest_v  = ! empty( $github_transient['version'] ) ? $github_transient['version'] : '—';
+$github_checked   = ! empty( $github_transient['checked_at'] ) ? $github_transient['checked_at'] : '—';
+
+$update_status    = 'Up to date';
+$update_color     = 'ok';
+
+if ( $github_latest_v !== '—' ) {
+	if ( version_compare( $plugin_version, $github_latest_v, '<' ) ) {
+		$update_status = 'Update Available';
+		$update_color  = 'warn';
+	}
+} elseif ( false === $github_transient ) {
+	$update_status = 'Checking...';
+	$update_color  = 'info';
+}
+
 // ─── Quick Links ──────────────────────────────────────────────────────────────
 $quick_actions = array(
 	array( 'label' => 'Global Settings', 'page' => 'soldis-landing-global',   'icon' => 'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z' ),
@@ -996,7 +1014,47 @@ endforeach; ?>
 		</div>
 
 		<!-- ═══════════════════════════════════════════════════
-		     8. RECENT PLUGIN UPDATES
+		     8. SYSTEM UPDATER (GitHub)
+		     ═══════════════════════════════════════════════════ -->
+		<div class="sd-card">
+			<div class="sd-card-head">
+				<div class="sd-card-head-icon">
+					<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+				</div>
+				<h3><?php defined( 'ABSPATH' ) || exit;
+esc_html_e( 'System Updater', 'soldis-landing' ); ?></h3>
+				<span class="sd-badge <?php echo 'sd-badge--' . esc_attr( $update_color ); ?>">
+					<?php echo esc_html( $update_status ); ?>
+				</span>
+			</div>
+			<div class="sd-card-body">
+				<ul class="sd-row-list">
+					<li class="sd-row">
+						<?php echo sd_dot( 'info' ); ?>
+						<span class="sd-row-label"><?php esc_html_e( 'Current Version', 'soldis-landing' ); ?></span>
+						<span class="sd-row-value"><strong>v<?php echo esc_html( $plugin_version ); ?></strong></span>
+					</li>
+					<li class="sd-row">
+						<?php echo sd_dot( $update_color ); ?>
+						<span class="sd-row-label"><?php esc_html_e( 'Latest Release', 'soldis-landing' ); ?></span>
+						<span class="sd-row-value"><strong>v<?php echo esc_html( $github_latest_v ); ?></strong></span>
+					</li>
+					<li class="sd-row">
+						<?php echo sd_dot( 'info' ); ?>
+						<span class="sd-row-label"><?php esc_html_e( 'Last Checked', 'soldis-landing' ); ?></span>
+						<span class="sd-row-value"><?php echo esc_html( $github_checked ); ?></span>
+					</li>
+				</ul>
+			</div>
+			<div class="sd-card-foot">
+				<a href="<?php echo esc_url( admin_url( 'update-core.php' ) ); ?>" style="font-size:12px; color:#c79a3b; font-weight:600; text-decoration:none;">
+					<?php esc_html_e( 'Check for updates →', 'soldis-landing' ); ?>
+				</a>
+			</div>
+		</div>
+
+		<!-- ═══════════════════════════════════════════════════
+		     9. RECENT PLUGIN UPDATES
 		     ═══════════════════════════════════════════════════ -->
 		<div class="sd-card sd-span-2">
 			<div class="sd-card-head">
@@ -1036,7 +1094,7 @@ endforeach; ?>
 		</div>
 
 		<!-- ═══════════════════════════════════════════════════
-		     9. SYSTEM INFORMATION (Collapsible)
+		     10. SYSTEM INFORMATION (Collapsible)
 		     ═══════════════════════════════════════════════════ -->
 		<div class="sd-card">
 			<button class="sd-collapsible-trigger" id="sd-sysinfo-toggle" aria-expanded="false" aria-controls="sd-sysinfo-body">
