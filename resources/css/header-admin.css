@@ -1,0 +1,60 @@
+/**
+ * OPA Reklama - Header Admin CSS
+ */
+
+.soldis-tabs {
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+	display: flex;
+	margin-top: 20px;
+}
+
+.soldis-tab-nav {
+	width: 200px;
+	margin: 0;
+	padding: 0;
+	background: #f0f0f1;
+	border-right: 1px solid #c3c4c7;
+}
+
+.soldis-tab-nav li {
+	margin: 0;
+	padding: 15px 20px;
+	cursor: pointer;
+	border-bottom: 1px solid #e2e4e7;
+	font-weight: 500;
+	transition: all 0.2s;
+}
+
+.soldis-tab-nav li:hover {
+	background: #fff;
+}
+
+.soldis-tab-nav li.active {
+	background: #fff;
+	border-right: 1px solid #fff;
+	margin-right: -1px;
+	position: relative;
+	z-index: 10;
+	color: #0073aa;
+}
+
+.soldis-tab-content {
+	flex-grow: 1;
+	padding: 30px;
+}
+
+.soldis-tab-pane {
+	display: none;
+}
+
+.soldis-tab-pane.active {
+	display: block;
+}
+
+.soldis-tab-pane h2 {
+	margin-top: 0;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #e2e4e7;
+}

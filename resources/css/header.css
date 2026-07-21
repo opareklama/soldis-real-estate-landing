@@ -1,0 +1,305 @@
+/**
+ * OPA Reklama - Premium Header Styles
+ */
+
+:root {
+	--soldis-container-width: 1200px;
+	--soldis-header-height-desktop: 80px;
+	--soldis-header-height-tablet: 70px;
+	--soldis-header-height-mobile: 60px;
+	--soldis-header-bg: #ffffff;
+	--soldis-header-sticky-bg: #ffffff;
+	--soldis-header-text: #1d2327;
+	--soldis-primary-color: #0073aa;
+	--soldis-cta-bg: #0073aa;
+	--soldis-nav-font-size: 16px;
+	--soldis-cta-radius: 6px;
+	--soldis-cta-pad-y: 10px;
+	--soldis-cta-pad-x: 24px;
+	--soldis-cta-shadow: none;
+}
+
+/* Base Header */
+.soldis-header {
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+	background-color: var(--soldis-header-bg);
+	border-bottom: 1px solid #e2e4e7;
+	transition: all 0.3s ease;
+	width: 100%;
+}
+
+.soldis-header.is-sticky {
+	background-color: var(--soldis-header-sticky-bg);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.soldis-container {
+	max-width: var(--soldis-container-width);
+	margin: 0 auto;
+	padding: 0 24px;
+}
+
+.soldis-header-inner {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: var(--soldis-header-height-desktop);
+	transition: height 0.3s ease;
+}
+
+/* Branding */
+.soldis-logo {
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+.soldis-logo-img {
+	width: var(--soldis-logo-w-d);
+	height: var(--soldis-logo-h-d);
+	object-fit: contain;
+}
+.soldis-logo-text {
+	color: var(--soldis-logo-color);
+	font-family: var(--soldis-logo-font-family);
+	font-size: var(--soldis-logo-font-size);
+	font-weight: var(--soldis-logo-font-weight);
+	letter-spacing: var(--soldis-logo-letter-spacing);
+	transition: color 0.2s ease;
+}
+.soldis-logo:hover .soldis-logo-text {
+	color: var(--soldis-logo-hover-color);
+}
+
+/* Navigation */
+.soldis-header-nav {
+	display: none;
+}
+@media (min-width: 1025px) {
+	.soldis-header-nav {
+		display: block;
+	}
+}
+.soldis-nav-list {
+	display: flex;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	gap: 32px;
+}
+.soldis-nav-link {
+	text-decoration: none;
+	color: var(--soldis-header-text);
+	font-weight: 500;
+	font-size: var(--soldis-nav-font-size);
+	transition: color 0.2s ease;
+	position: relative;
+}
+.soldis-nav-link:hover {
+	color: var(--soldis-primary-color);
+}
+
+/* Actions */
+.soldis-header-actions {
+	display: flex;
+	align-items: center;
+	gap: 1.5rem;
+}
+
+.soldis-header-contact {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding-right: 1.5rem;
+	border-right: 1px solid var(--soldis-color-border);
+}
+
+.soldis-header-contact-icon {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	border: 1px solid var(--soldis-color-border);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--soldis-color-secondary);
+}
+
+.soldis-header-contact-text {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.soldis-header-phone {
+	font-family: var(--soldis-font-heading);
+	color: var(--soldis-header-text);
+	font-weight: 700;
+	font-size: 0.95rem;
+	line-height: 1.2;
+}
+
+.soldis-header-email {
+	color: var(--soldis-color-body);
+	font-size: 0.8rem;
+	line-height: 1.2;
+	margin-top: 2px;
+}
+
+.soldis-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: var(--soldis-cta-pad-y) var(--soldis-cta-pad-x);
+	border-radius: var(--soldis-cta-radius);
+	font-weight: 600;
+	text-decoration: none;
+	transition: all 0.2s ease;
+	box-shadow: var(--soldis-cta-shadow);
+}
+.soldis-btn-primary {
+	background-color: var(--soldis-cta-bg);
+	color: #fff;
+}
+.soldis-btn-primary:hover {
+	background-color: var(--soldis-primary-color);
+	color: #fff;
+}
+.soldis-btn-secondary {
+	background-color: transparent;
+	color: var(--soldis-cta-bg);
+	border: 2px solid var(--soldis-cta-bg);
+	padding: calc(var(--soldis-cta-pad-y) - 2px) calc(var(--soldis-cta-pad-x) - 2px); /* Adjust padding for border */
+}
+.soldis-btn-secondary:hover {
+	background-color: var(--soldis-cta-bg);
+	color: #fff;
+}
+.soldis-btn-block {
+	display: block;
+	text-align: center;
+	width: 100%;
+}
+
+/* Mobile Toggle */
+.soldis-mobile-toggle {
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 8px;
+	display: flex;
+	align-items: center;
+	color: var(--soldis-header-text);
+}
+@media (min-width: 1025px) {
+	.soldis-mobile-toggle {
+		display: none;
+	}
+}
+
+/* Mobile Drawer */
+.soldis-mobile-drawer {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	z-index: 10000;
+	pointer-events: none;
+	visibility: hidden;
+}
+.soldis-mobile-drawer.is-open {
+	pointer-events: auto;
+	visibility: visible;
+}
+
+.soldis-drawer-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0,0,0,0.5);
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+.soldis-mobile-drawer.is-open .soldis-drawer-overlay {
+	opacity: 1;
+}
+
+.soldis-drawer-content {
+	position: absolute;
+	top: 0;
+	right: -100%;
+	bottom: 0;
+	width: 320px;
+	max-width: 90%;
+	background: var(--soldis-header-bg);
+	box-shadow: -4px 0 24px rgba(0,0,0,0.1);
+	transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	display: flex;
+	flex-direction: column;
+}
+.soldis-mobile-drawer.is-open .soldis-drawer-content {
+	right: 0;
+}
+
+.soldis-drawer-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 24px;
+	border-bottom: 1px solid #e2e4e7;
+}
+.soldis-drawer-close {
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 8px;
+	color: var(--soldis-header-text);
+}
+
+.soldis-drawer-nav {
+	padding: 24px;
+	flex-grow: 1;
+	overflow-y: auto;
+}
+.soldis-nav-list-mobile {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.soldis-drawer-actions {
+	padding: 24px;
+	border-top: 1px solid #e2e4e7;
+}
+
+/* Breakpoints */
+@media (max-width: 1024px) {
+	.soldis-header-inner {
+		height: var(--soldis-header-height-tablet);
+	}
+	.soldis-logo-img {
+		width: var(--soldis-logo-w-t);
+		height: var(--soldis-logo-h-t);
+	}
+}
+@media (max-width: 768px) {
+	.soldis-header-inner {
+		height: var(--soldis-header-height-mobile);
+	}
+	.soldis-logo-img {
+		width: var(--soldis-logo-w-m);
+		height: var(--soldis-logo-h-m);
+	}
+	.soldis-header-actions .soldis-btn,
+	.soldis-header-contact {
+		display: none; /* Hide CTA and contact block in header on mobile */
+	}
+}

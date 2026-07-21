@@ -1,0 +1,780 @@
+/**
+ * SOLDIS Landing — Premium Admin UI
+ *
+ * A comprehensive, professional-grade admin stylesheet for all plugin pages.
+ * Designed to feel like a native SaaS product dashboard.
+ *
+ * @package    OpaReklama\SoldisLanding
+ * @author     OPA Reklama
+ * @copyright  Copyright (c) OPA Reklama. All Rights Reserved.
+ */
+
+/* ==========================================================================
+   CSS Variables — Admin Design System
+   ========================================================================== */
+
+:root {
+	--sa-navy:         #0a2540;
+	--sa-navy-light:   #0d2f4f;
+	--sa-gold:         #c79a3b;
+	--sa-gold-light:   #d9ae55;
+	--sa-gold-muted:   rgba(199, 154, 59, 0.12);
+	--sa-white:        #ffffff;
+	--sa-bg:           #f0f2f5;
+	--sa-surface:      #ffffff;
+	--sa-border:       #e4e6ea;
+	--sa-border-dark:  #d1d3d9;
+	--sa-text-primary: #111827;
+	--sa-text-body:    #374151;
+	--sa-text-muted:   #6b7280;
+	--sa-text-faint:   #9ca3af;
+	--sa-success:      #16a34a;
+	--sa-danger:       #dc2626;
+	--sa-info:         #2563eb;
+	--sa-shadow-sm:    0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+	--sa-shadow-md:    0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+	--sa-shadow-lg:    0 10px 30px rgba(0,0,0,0.1), 0 4px 10px rgba(0,0,0,0.06);
+	--sa-radius-sm:    6px;
+	--sa-radius-md:    10px;
+	--sa-radius-lg:    14px;
+	--sa-transition:   0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   Base Wrapper
+   ========================================================================== */
+
+.soldis-admin-wrap {
+	margin: 16px 20px 40px 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
+	color: var(--sa-text-body);
+	font-size: 14px;
+	line-height: 1.5;
+}
+
+.soldis-admin-wrap *,
+.soldis-admin-wrap *::before,
+.soldis-admin-wrap *::after {
+	box-sizing: border-box;
+}
+
+/* ==========================================================================
+   Page Header
+   ========================================================================== */
+
+.soldis-admin-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+	padding: 28px 32px;
+	background: var(--sa-navy);
+	border-radius: var(--sa-radius-lg);
+	margin-bottom: 28px;
+	position: relative;
+	overflow: hidden;
+}
+
+/* Subtle background texture */
+.soldis-admin-header::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background:
+		radial-gradient(ellipse at 80% 50%, rgba(199,154,59,0.12) 0%, transparent 60%),
+		radial-gradient(ellipse at 10% 100%, rgba(199,154,59,0.06) 0%, transparent 50%);
+	pointer-events: none;
+}
+
+.soldis-admin-header-content {
+	position: relative;
+	z-index: 1;
+}
+
+.soldis-admin-header h1 {
+	font-size: 24px;
+	font-weight: 700;
+	margin: 0 0 4px 0;
+	color: var(--sa-white);
+	letter-spacing: -0.3px;
+}
+
+.soldis-admin-subtitle {
+	margin: 0;
+	font-size: 13px;
+	color: rgba(255,255,255,0.55);
+	font-weight: 400;
+}
+
+/* Header badge / version pill */
+.soldis-admin-header-badge {
+	position: relative;
+	z-index: 1;
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 6px 14px;
+	background: rgba(255,255,255,0.08);
+	border: 1px solid rgba(255,255,255,0.12);
+	border-radius: 100px;
+	font-size: 12px;
+	color: rgba(255,255,255,0.6);
+	font-weight: 500;
+	flex-shrink: 0;
+}
+
+.soldis-admin-header-badge strong {
+	color: var(--sa-gold);
+}
+
+/* ==========================================================================
+   Tab System
+   ========================================================================== */
+
+.soldis-tabs {
+	background: var(--sa-surface);
+	border-radius: var(--sa-radius-lg);
+	box-shadow: var(--sa-shadow-md);
+	overflow: hidden;
+	border: 1px solid var(--sa-border);
+}
+
+/* Tab Navigation Bar */
+.soldis-tab-nav {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0;
+	margin: 0;
+	padding: 0;
+	background: var(--sa-bg);
+	border-bottom: 1px solid var(--sa-border);
+	list-style: none;
+}
+
+.soldis-tab-nav li {
+	display: flex;
+	align-items: center;
+	padding: 0 20px;
+	height: 48px;
+	font-size: 13px;
+	font-weight: 500;
+	color: var(--sa-text-muted);
+	cursor: pointer;
+	border-bottom: 2px solid transparent;
+	margin-bottom: -1px;
+	transition: color var(--sa-transition),
+	            border-color var(--sa-transition),
+	            background var(--sa-transition);
+	user-select: none;
+	white-space: nowrap;
+}
+
+.soldis-tab-nav li:hover {
+	color: var(--sa-text-primary);
+	background: rgba(255,255,255,0.6);
+}
+
+.soldis-tab-nav li.active {
+	color: var(--sa-navy);
+	border-bottom-color: var(--sa-gold);
+	background: var(--sa-white);
+	font-weight: 600;
+}
+
+/* Disabled Tab */
+.soldis-tab-nav li.soldis-disabled-tab {
+	opacity: 0.4;
+	cursor: not-allowed;
+	pointer-events: none;
+}
+
+/* Tab Content Area */
+.soldis-tab-content {
+	padding: 0;
+}
+
+.soldis-tab-pane {
+	display: none;
+	padding: 32px 36px 36px;
+}
+
+.soldis-tab-pane.active {
+	display: block;
+}
+
+/* Section headings inside tabs */
+.soldis-tab-pane > h2,
+.soldis-section-settings h2 {
+	font-size: 17px;
+	font-weight: 700;
+	color: var(--sa-text-primary);
+	margin: 0 0 6px 0;
+	padding: 0;
+	letter-spacing: -0.2px;
+}
+
+.soldis-tab-pane > h3 {
+	font-size: 14px;
+	font-weight: 600;
+	color: var(--sa-text-body);
+	margin: 28px 0 8px 0;
+}
+
+.soldis-tab-pane > p.description,
+.soldis-tab-pane > .description {
+	margin: 0 0 24px 0;
+	font-size: 13px;
+	color: var(--sa-text-muted);
+	line-height: 1.55;
+}
+
+/* ==========================================================================
+   Form Table Polish
+   ========================================================================== */
+
+.soldis-tab-pane .form-table,
+.soldis-section-settings .form-table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 0 0 16px 0;
+}
+
+.soldis-tab-pane .form-table th,
+.soldis-section-settings .form-table th {
+	width: 220px;
+	padding: 14px 20px 14px 0;
+	font-size: 13px;
+	font-weight: 600;
+	color: var(--sa-text-body);
+	vertical-align: middle;
+	border-bottom: 1px solid var(--sa-border);
+}
+
+.soldis-tab-pane .form-table td,
+.soldis-section-settings .form-table td {
+	padding: 14px 0;
+	vertical-align: middle;
+	border-bottom: 1px solid var(--sa-border);
+}
+
+.soldis-tab-pane .form-table tr:last-child th,
+.soldis-tab-pane .form-table tr:last-child td,
+.soldis-section-settings .form-table tr:last-child th,
+.soldis-section-settings .form-table tr:last-child td {
+	border-bottom: none;
+}
+
+/* ==========================================================================
+   Form Controls Polish
+   ========================================================================== */
+
+/* Text Inputs */
+.soldis-admin-wrap input[type="text"],
+.soldis-admin-wrap input[type="number"],
+.soldis-admin-wrap input[type="url"],
+.soldis-admin-wrap input[type="email"],
+.soldis-admin-wrap textarea,
+.soldis-admin-wrap select {
+	border: 1px solid var(--sa-border-dark);
+	border-radius: var(--sa-radius-sm);
+	padding: 8px 12px;
+	font-size: 13px;
+	color: var(--sa-text-primary);
+	background: var(--sa-white);
+	transition: border-color var(--sa-transition),
+	            box-shadow var(--sa-transition);
+	outline: none;
+	font-family: inherit;
+}
+
+.soldis-admin-wrap input[type="text"]:focus,
+.soldis-admin-wrap input[type="number"]:focus,
+.soldis-admin-wrap input[type="url"]:focus,
+.soldis-admin-wrap input[type="email"]:focus,
+.soldis-admin-wrap textarea:focus,
+.soldis-admin-wrap select:focus {
+	border-color: var(--sa-gold);
+	box-shadow: 0 0 0 3px rgba(199, 154, 59, 0.15);
+}
+
+.soldis-admin-wrap textarea {
+	resize: vertical;
+	min-height: 80px;
+	line-height: 1.5;
+}
+
+/* Checkbox polish */
+.soldis-admin-wrap input[type="checkbox"] {
+	width: 16px;
+	height: 16px;
+	accent-color: var(--sa-navy);
+	cursor: pointer;
+	vertical-align: middle;
+	margin-right: 6px;
+}
+
+.soldis-admin-wrap label {
+	cursor: pointer;
+	font-size: 13px;
+	color: var(--sa-text-body);
+}
+
+/* Preview / read-only field */
+.soldis-preview-value {
+	display: inline-block;
+	font-size: 13px;
+	color: var(--sa-text-muted);
+	background: var(--sa-bg);
+	border: 1px solid var(--sa-border);
+	border-radius: var(--sa-radius-sm);
+	padding: 6px 10px;
+}
+
+/* ==========================================================================
+   Submit Button
+   ========================================================================== */
+
+.soldis-admin-wrap .submit {
+	padding: 24px 36px;
+	border-top: 1px solid var(--sa-border);
+	background: var(--sa-bg);
+	margin: 0;
+}
+
+.soldis-admin-wrap .button-primary {
+	background: var(--sa-navy) !important;
+	border-color: var(--sa-navy) !important;
+	color: var(--sa-white) !important;
+	font-weight: 600 !important;
+	font-size: 13px !important;
+	padding: 8px 20px !important;
+	border-radius: var(--sa-radius-sm) !important;
+	height: auto !important;
+	line-height: 1.4 !important;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.15) !important;
+	transition: background var(--sa-transition), transform var(--sa-transition) !important;
+	cursor: pointer !important;
+}
+
+.soldis-admin-wrap .button-primary:hover {
+	background: var(--sa-navy-light) !important;
+	transform: translateY(-1px) !important;
+	box-shadow: var(--sa-shadow-md) !important;
+}
+
+/* Secondary button */
+.soldis-admin-wrap .button-secondary,
+.soldis-admin-wrap .button:not(.button-primary) {
+	background: var(--sa-white) !important;
+	border: 1px solid var(--sa-border-dark) !important;
+	color: var(--sa-text-body) !important;
+	font-size: 13px !important;
+	border-radius: var(--sa-radius-sm) !important;
+	height: auto !important;
+	padding: 7px 14px !important;
+	line-height: 1.4 !important;
+	transition: background var(--sa-transition), border-color var(--sa-transition) !important;
+	cursor: pointer !important;
+}
+
+.soldis-admin-wrap .button-secondary:hover,
+.soldis-admin-wrap .button:not(.button-primary):hover {
+	background: var(--sa-bg) !important;
+	border-color: var(--sa-border-dark) !important;
+	color: var(--sa-text-primary) !important;
+}
+
+/* ==========================================================================
+   Repeater Rows (Header / Footer nav)
+   ========================================================================== */
+
+.soldis-repeater {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	margin-bottom: 16px;
+}
+
+.soldis-repeater-row {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	background: var(--sa-bg);
+	border: 1px solid var(--sa-border);
+	border-radius: var(--sa-radius-md);
+	padding: 12px 14px;
+	transition: border-color var(--sa-transition), box-shadow var(--sa-transition);
+}
+
+.soldis-repeater-row:hover {
+	border-color: var(--sa-border-dark);
+	box-shadow: var(--sa-shadow-sm);
+}
+
+.soldis-repeater-fields {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 8px;
+	flex: 1;
+	min-width: 0;
+}
+
+.soldis-repeater-fields input[type="text"] {
+	flex: 1;
+	min-width: 100px;
+	max-width: none;
+}
+
+.soldis-repeater-fields select {
+	flex-shrink: 0;
+}
+
+.soldis-repeater-fields label {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	flex-shrink: 0;
+	color: var(--sa-text-muted);
+	font-size: 12px;
+}
+
+.soldis-repeater-actions {
+	flex-shrink: 0;
+}
+
+.soldis-repeater-actions .soldis-repeater-remove {
+	color: var(--sa-danger) !important;
+	border-color: rgba(220, 38, 38, 0.3) !important;
+	font-size: 12px !important;
+	padding: 5px 10px !important;
+}
+
+.soldis-repeater-actions .soldis-repeater-remove:hover {
+	background: rgba(220, 38, 38, 0.06) !important;
+	border-color: var(--sa-danger) !important;
+}
+
+/* Repeater Add button */
+#soldis-add-nav-item,
+#soldis-add-footer-nav-item {
+	margin-top: 4px;
+	background: var(--sa-gold-muted) !important;
+	border-color: rgba(199, 154, 59, 0.3) !important;
+	color: #7a5a0a !important;
+	font-weight: 600 !important;
+}
+
+#soldis-add-nav-item:hover,
+#soldis-add-footer-nav-item:hover {
+	background: rgba(199, 154, 59, 0.2) !important;
+	border-color: var(--sa-gold) !important;
+}
+
+/* ==========================================================================
+   Section Settings (used inside Homepage tabs)
+   ========================================================================== */
+
+.soldis-section-settings {
+	padding: 0;
+}
+
+.soldis-section-settings h2 {
+	font-size: 17px;
+	font-weight: 700;
+	color: var(--sa-text-primary);
+	margin: 0 0 4px 0;
+	padding: 0;
+}
+
+.soldis-section-settings h3 {
+	font-size: 13px;
+	font-weight: 600;
+	color: var(--sa-text-muted);
+	text-transform: uppercase;
+	letter-spacing: 0.6px;
+	margin: 28px 0 12px 0;
+}
+
+.soldis-section-settings hr {
+	border: none;
+	border-top: 1px solid var(--sa-border);
+	margin: 28px 0;
+}
+
+/* FAQ / repeater items in sections */
+.soldis-repeater-item {
+	background: var(--sa-bg);
+	border: 1px solid var(--sa-border);
+	margin-bottom: 10px;
+	border-radius: var(--sa-radius-md);
+	max-width: 100%;
+	overflow: hidden;
+	transition: border-color var(--sa-transition);
+}
+
+.soldis-repeater-item:hover {
+	border-color: var(--sa-border-dark);
+}
+
+.soldis-repeater-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 12px 16px;
+	background: var(--sa-white);
+	border-bottom: 1px solid var(--sa-border);
+	cursor: pointer;
+	transition: background var(--sa-transition);
+}
+
+.soldis-repeater-header:hover {
+	background: #fafbfc;
+}
+
+.soldis-repeater-header h4 {
+	margin: 0;
+	font-size: 13px;
+	font-weight: 600;
+	color: var(--sa-text-body);
+}
+
+.soldis-repeater-header .soldis-repeater-actions {
+	display: flex;
+	gap: 6px;
+}
+
+.soldis-repeater-content {
+	padding: 20px;
+}
+
+.soldis-repeater-content.soldis-hidden {
+	display: none;
+}
+
+/* ==========================================================================
+   Info / Notice Boxes
+   ========================================================================== */
+
+.soldis-admin-notice {
+	display: flex;
+	align-items: flex-start;
+	gap: 12px;
+	padding: 14px 18px;
+	border-radius: var(--sa-radius-md);
+	margin-bottom: 20px;
+	font-size: 13px;
+	line-height: 1.5;
+}
+
+.soldis-admin-notice--info {
+	background: rgba(37, 99, 235, 0.06);
+	border: 1px solid rgba(37, 99, 235, 0.2);
+	color: #1e40af;
+}
+
+.soldis-admin-notice--gold {
+	background: var(--sa-gold-muted);
+	border: 1px solid rgba(199, 154, 59, 0.25);
+	color: #7a5a0a;
+}
+
+.soldis-admin-notice svg {
+	flex-shrink: 0;
+	margin-top: 1px;
+}
+
+/* ==========================================================================
+   HR Divider
+   ========================================================================== */
+
+.soldis-tab-pane hr,
+.soldis-section-settings hr {
+	border: none;
+	border-top: 1px solid var(--sa-border);
+	margin: 28px 0;
+}
+
+/* ==========================================================================
+   Dashboard Cards
+   ========================================================================== */
+
+.soldis-admin-main {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	gap: 20px;
+}
+
+.soldis-admin-card {
+	background: var(--sa-surface);
+	border: 1px solid var(--sa-border);
+	border-radius: var(--sa-radius-lg);
+	padding: 28px;
+	box-shadow: var(--sa-shadow-sm);
+	transition: box-shadow var(--sa-transition), transform var(--sa-transition);
+}
+
+.soldis-admin-card:hover {
+	box-shadow: var(--sa-shadow-md);
+	transform: translateY(-1px);
+}
+
+.soldis-admin-card-icon {
+	width: 44px;
+	height: 44px;
+	border-radius: var(--sa-radius-md);
+	background: var(--sa-gold-muted);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 16px;
+	color: var(--sa-gold);
+}
+
+.soldis-admin-card h2 {
+	margin: 0 0 8px 0;
+	font-size: 16px;
+	font-weight: 700;
+	color: var(--sa-text-primary);
+}
+
+.soldis-admin-card p {
+	margin: 0 0 16px 0;
+	font-size: 13px;
+	line-height: 1.55;
+	color: var(--sa-text-muted);
+}
+
+.soldis-admin-card .soldis-card-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	font-size: 13px;
+	font-weight: 600;
+	color: var(--sa-navy);
+	text-decoration: none;
+	transition: color var(--sa-transition);
+}
+
+.soldis-admin-card .soldis-card-link:hover {
+	color: var(--sa-gold);
+}
+
+/* Status badge */
+.soldis-status-badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 5px;
+	font-size: 11px;
+	font-weight: 600;
+	padding: 3px 9px;
+	border-radius: 100px;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+.soldis-status-badge--active {
+	background: rgba(22, 163, 74, 0.1);
+	color: var(--sa-success);
+}
+
+.soldis-status-badge--inactive {
+	background: rgba(156, 163, 175, 0.15);
+	color: var(--sa-text-faint);
+}
+
+.soldis-status-dot {
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: currentColor;
+	flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Form Row Utility (section settings)
+   ========================================================================== */
+
+.soldis-form-row {
+	margin-bottom: 16px;
+}
+
+.soldis-form-row:last-child {
+	margin-bottom: 0;
+}
+
+.soldis-form-row label {
+	display: block;
+	font-weight: 600;
+	font-size: 13px;
+	margin-bottom: 6px;
+	color: var(--sa-text-body);
+}
+
+.soldis-form-row input[type="text"],
+.soldis-form-row textarea {
+	width: 100%;
+	max-width: 100%;
+}
+
+/* ==========================================================================
+   Global Settings Preview Row
+   ========================================================================== */
+
+.soldis-global-preview-link {
+	font-size: 11px;
+	color: var(--sa-text-muted);
+	margin-left: 10px;
+	text-decoration: none;
+	opacity: 0.7;
+	transition: opacity var(--sa-transition);
+}
+
+.soldis-global-preview-link:hover {
+	opacity: 1;
+	color: var(--sa-gold);
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 960px) {
+	.soldis-admin-header {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.soldis-tab-pane {
+		padding: 24px 24px 28px;
+	}
+
+	.soldis-admin-wrap .submit {
+		padding: 20px 24px;
+	}
+}
+
+@media (max-width: 640px) {
+	.soldis-tab-nav li {
+		padding: 0 14px;
+		font-size: 12px;
+	}
+
+	.soldis-tab-pane {
+		padding: 20px;
+	}
+
+	.soldis-repeater-fields {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.soldis-repeater-fields input[type="text"] {
+		min-width: unset;
+		width: 100%;
+	}
+
+	.soldis-admin-main {
+		grid-template-columns: 1fr;
+	}
+}

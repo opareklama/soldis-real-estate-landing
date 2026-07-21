@@ -1,0 +1,329 @@
+/**
+ * Soldis Landing - Why Soldis Section CSS (Premium Bento Box)
+ */
+
+.soldis-why-section {
+	position: relative;
+	width: 100%;
+	display: block;
+	overflow: visible; /* To allow callout overlap if needed */
+	background-color: #ffffff;
+	box-sizing: border-box;
+}
+
+.soldis-why-section * {
+	box-sizing: border-box;
+}
+
+.soldis-why-section .soldis-container {
+	position: relative;
+	z-index: 10;
+}
+
+.soldis-why-header {
+	text-align: center;
+	max-width: 650px;
+	margin: 0 auto 4rem auto;
+}
+
+.soldis-why-eyebrow {
+	font-family: var(--soldis-font-heading);
+	color: var(--soldis-color-secondary);
+	text-transform: uppercase;
+	font-weight: 700;
+	letter-spacing: 2px;
+	font-size: 0.85rem;
+	margin-bottom: 1rem;
+	display: inline-block;
+	background: var(--soldis-color-surface);
+	padding: 8px 20px;
+	border-radius: 30px;
+}
+
+.soldis-why-heading {
+	font-family: var(--soldis-font-heading);
+	color: var(--soldis-color-primary);
+	font-size: 3.5rem;
+	line-height: 1.15;
+	font-weight: 800;
+	margin-top: 0;
+	margin-bottom: 1.5rem;
+	letter-spacing: -1px;
+}
+
+.soldis-why-description {
+	font-family: var(--soldis-font-body);
+	color: var(--soldis-color-body);
+	font-size: 1.25rem;
+	line-height: 1.6;
+}
+
+.soldis-why-description p {
+	margin-bottom: 1rem;
+}
+.soldis-why-description p:last-child {
+	margin-bottom: 0;
+}
+
+/* Advanced Bento Grid */
+.soldis-why-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: auto auto;
+	gap: 16px;
+	margin-bottom: -40px; /* Overlap with callout */
+	position: relative;
+	z-index: 5;
+}
+
+.soldis-why-card {
+	border-radius: 24px;
+	padding: 30px;
+	transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.soldis-why-card:hover {
+	transform: translateY(-8px);
+	z-index: 10;
+}
+
+.soldis-why-card-icon {
+	width: 64px;
+	height: 64px;
+	border-radius: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: auto;
+}
+
+.soldis-why-card-icon svg {
+	width: 32px;
+	height: 32px;
+}
+
+.soldis-why-card-title {
+	font-family: var(--soldis-font-heading);
+	font-size: 1.6rem;
+	font-weight: 800;
+	margin-top: 25px;
+	margin-bottom: 10px;
+	line-height: 1.2;
+}
+
+.soldis-why-card-desc {
+	font-family: var(--soldis-font-body);
+	font-size: 1.05rem;
+	line-height: 1.6;
+	opacity: 0.9;
+}
+
+.soldis-why-card-desc p { margin: 0; }
+
+/* Bento Specifics */
+
+/* Card 1: Wide, Navy Background */
+.soldis-bento-card-1 {
+	grid-column: span 2;
+	background-color: var(--soldis-color-primary);
+	box-shadow: 0 20px 40px rgba(10, 37, 64, 0.15);
+}
+.soldis-bento-card-1 .soldis-why-card-icon {
+	background-color: rgba(255, 255, 255, 0.1);
+	color: var(--soldis-color-secondary);
+}
+.soldis-bento-card-1 .soldis-why-card-title {
+	color: #ffffff;
+}
+.soldis-bento-card-1 .soldis-why-card-desc {
+	color: rgba(255, 255, 255, 0.8);
+}
+.soldis-bento-card-1:hover {
+	box-shadow: 0 30px 50px rgba(10, 37, 64, 0.25);
+}
+
+/* Card 2: Tall, Gold Background */
+.soldis-bento-card-2 {
+	grid-column: span 1;
+	grid-row: span 2;
+	background-color: var(--soldis-color-surface);
+	box-shadow: 0 20px 40px rgba(199, 154, 59, 0.08);
+}
+.soldis-bento-card-2 .soldis-why-card-icon {
+	background-color: #ffffff;
+	color: var(--soldis-color-secondary);
+	box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+.soldis-bento-card-2 .soldis-why-card-title {
+	color: var(--soldis-color-primary);
+	font-size: 2rem; /* Make it pop vertically */
+	margin-top: 30px;
+}
+.soldis-bento-card-2 .soldis-why-card-desc {
+	color: var(--soldis-color-body);
+}
+
+/* Card 3 & 4: Square, White Bordered */
+.soldis-bento-card-3, .soldis-bento-card-4 {
+	grid-column: span 1;
+	background-color: #ffffff;
+	border: 1px solid var(--soldis-color-border);
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+.soldis-bento-card-3 .soldis-why-card-icon,
+.soldis-bento-card-4 .soldis-why-card-icon {
+	background-color: var(--soldis-color-surface);
+	color: var(--soldis-color-primary);
+}
+.soldis-bento-card-3 .soldis-why-card-title,
+.soldis-bento-card-4 .soldis-why-card-title {
+	color: var(--soldis-color-primary);
+	font-size: 1.5rem;
+}
+.soldis-bento-card-3 .soldis-why-card-desc,
+.soldis-bento-card-4 .soldis-why-card-desc {
+	color: var(--soldis-color-body);
+}
+
+/* Glassmorphism Bottom Callout */
+.soldis-why-callout {
+	position: relative;
+	z-index: 20;
+	background: rgba(255, 255, 255, 0.85);
+	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
+	border: 1px solid rgba(255, 255, 255, 0.4);
+	border-bottom: 3px solid var(--soldis-color-secondary);
+	border-radius: 24px;
+	padding: 30px 40px;
+	display: flex;
+	align-items: center;
+	gap: 25px;
+	max-width: 900px;
+	margin: 80px auto 0 auto;
+	box-shadow: 0 25px 50px rgba(0,0,0,0.1), 0 0 0 1px rgba(255,255,255,0.2) inset;
+}
+
+.soldis-why-callout-icon {
+	width: 90px;
+	height: 90px;
+	flex-shrink: 0;
+	background: linear-gradient(135deg, var(--soldis-color-secondary) 0%, var(--soldis-color-accent) 100%);
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #ffffff;
+	box-shadow: 0 15px 30px rgba(199, 154, 59, 0.3);
+}
+
+.soldis-why-callout-icon svg {
+	width: 40px;
+	height: 40px;
+}
+
+.soldis-why-callout-content {
+	flex-grow: 1;
+}
+
+.soldis-why-callout-title {
+	font-family: var(--soldis-font-heading);
+	color: var(--soldis-color-primary);
+	font-size: 1.6rem;
+	font-weight: 800;
+	line-height: 1.3;
+	margin-top: 0;
+	margin-bottom: 8px;
+}
+
+.soldis-why-callout-desc {
+	font-family: var(--soldis-font-body);
+	color: var(--soldis-color-body);
+	font-size: 1.2rem;
+	margin: 0;
+	line-height: 1.5;
+}
+
+/* Animations */
+.soldis-animate-fade-up {
+	opacity: 0;
+	transform: translateY(40px);
+}
+
+.soldis-animated.soldis-animate-fade-up {
+	opacity: 1;
+	transform: translateY(0);
+	transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+	.soldis-why-heading { font-size: 3rem; }
+	
+	.soldis-why-grid {
+		grid-template-columns: repeat(2, 1fr);
+		margin-bottom: 0;
+	}
+	
+	.soldis-bento-card-1 { grid-column: span 2; }
+	
+	/* Card 2 loses its tall nature on tablet, becomes span 1 */
+	.soldis-bento-card-2 { 
+		grid-column: span 1; 
+		grid-row: auto;
+	}
+	.soldis-bento-card-2 .soldis-why-card-title {
+		font-size: 1.8rem;
+		margin-top: 40px;
+	}
+	
+	.soldis-bento-card-3 { grid-column: span 1; }
+	.soldis-bento-card-4 { grid-column: span 2; }
+	
+	.soldis-why-callout {
+		margin-top: 60px;
+		padding: 30px;
+	}
+}
+
+@media (max-width: 767px) {
+	.soldis-why-heading { font-size: 2.25rem; }
+	.soldis-why-description { font-size: 1.1rem; }
+	
+	.soldis-why-grid {
+		grid-template-columns: 1fr;
+		gap: 20px;
+	}
+	
+	.soldis-bento-card-1,
+	.soldis-bento-card-2,
+	.soldis-bento-card-3,
+	.soldis-bento-card-4 {
+		grid-column: span 1;
+		padding: 35px;
+	}
+	
+	.soldis-why-card-title { font-size: 1.5rem !important; }
+	
+	.soldis-why-callout {
+		flex-direction: column;
+		text-align: center;
+		padding: 40px 25px;
+		border-radius: 24px;
+	}
+	
+	.soldis-why-callout-icon {
+		width: 70px;
+		height: 70px;
+	}
+	.soldis-why-callout-icon svg {
+		width: 30px;
+		height: 30px;
+	}
+	.soldis-why-callout-title { font-size: 1.5rem; }
+	.soldis-why-callout-desc { font-size: 1.05rem; }
+}

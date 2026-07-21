@@ -1,0 +1,456 @@
+/**
+ * SOLDIS Landing — Footer CSS
+ *
+ * Premium, minimal, luxury dark footer.
+ * Consistent with the SOLDIS design system (CSS variables from Global Settings).
+ *
+ * @package    OpaReklama\SoldisLanding
+ * @author     OPA Reklama
+ * @copyright  Copyright (c) OPA Reklama. All Rights Reserved.
+ */
+
+/* ==========================================================================
+   CSS Custom Properties (fallbacks if Global CSS vars not set)
+   ========================================================================== */
+
+.soldis-footer {
+	--footer-bg:         #0a2540;
+	--footer-bg-deeper:  #071a30;
+	--footer-gold:       #c79a3b;
+	--footer-gold-hover: #d9ae55;
+	--footer-text:       rgba(255, 255, 255, 0.65);
+	--footer-text-light: rgba(255, 255, 255, 0.35);
+	--footer-white:      #ffffff;
+	--footer-divider:    rgba(255, 255, 255, 0.08);
+	--footer-divider-thin: rgba(255, 255, 255, 0.05);
+	--footer-social-bg:  rgba(255, 255, 255, 0.06);
+	--footer-social-hover: rgba(199, 154, 59, 0.2);
+	--footer-transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+.soldis-footer {
+	background-color: var(--footer-bg);
+	background-image: radial-gradient(ellipse at 50% 0%, rgba(199, 154, 59, 0.05) 0%, transparent 60%);
+	color: var(--footer-text);
+	font-family: var(--soldis-font-body, system-ui, -apple-system, sans-serif);
+	position: relative;
+	width: 100%;
+}
+
+.soldis-footer *,
+.soldis-footer *::before,
+.soldis-footer *::after {
+	box-sizing: border-box;
+}
+
+.soldis-footer a {
+	color: inherit;
+	text-decoration: none;
+}
+
+/* ==========================================================================
+   Inner wrapper
+   ========================================================================== */
+
+.soldis-footer-inner {
+	padding: 72px 0 0;
+}
+
+/* ==========================================================================
+   TOP ROW — Brand + Social
+   ========================================================================== */
+
+.soldis-footer-top {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 40px;
+	padding-bottom: 48px;
+}
+
+/* Brand */
+.soldis-footer-brand {
+	flex: 1;
+	min-width: 0;
+}
+
+/* Logo */
+.soldis-footer-logo {
+	display: inline-flex;
+	align-items: center;
+	gap: 12px;
+	margin-bottom: 20px;
+	text-decoration: none;
+	transition: opacity var(--footer-transition);
+}
+
+.soldis-footer-logo:hover {
+	opacity: 0.8;
+}
+
+.soldis-footer-logo-img {
+	height: 36px;
+	width: auto;
+	display: block;
+	/* Invert dark logos to look good on dark background */
+	filter: brightness(0) invert(1);
+}
+
+.soldis-footer-logo-text {
+	font-family: var(--soldis-font-heading, var(--soldis-logo-font-family, inherit));
+	font-size: 1.5rem;
+	font-weight: 800;
+	letter-spacing: -0.5px;
+	color: var(--footer-white);
+	/* Gold accent on first character / brand word */
+	background: linear-gradient(135deg, var(--footer-white) 0%, var(--footer-gold) 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+/* Description */
+.soldis-footer-desc {
+	font-size: 0.95rem;
+	line-height: 1.65;
+	color: var(--footer-text);
+	max-width: 380px;
+	margin: 0;
+}
+
+/* Social Icons */
+.soldis-footer-social {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	flex-shrink: 0;
+	margin-top: 4px; /* Align visually with logo */
+}
+
+.soldis-footer-social-link {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background: var(--footer-social-bg);
+	color: var(--footer-text);
+	border: 1px solid var(--footer-divider);
+	transition: background var(--footer-transition),
+	            color var(--footer-transition),
+	            border-color var(--footer-transition),
+	            transform var(--footer-transition);
+	flex-shrink: 0;
+}
+
+.soldis-footer-social-link:hover {
+	background: var(--footer-social-hover);
+	color: var(--footer-gold);
+	border-color: rgba(199, 154, 59, 0.3);
+	transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   Dividers
+   ========================================================================== */
+
+.soldis-footer-divider {
+	height: 1px;
+	background: var(--footer-divider);
+	width: 100%;
+	margin: 0;
+}
+
+.soldis-footer-divider--thin {
+	background: var(--footer-divider-thin);
+}
+
+/* ==========================================================================
+   MIDDLE ROW — Nav + Contact
+   ========================================================================== */
+
+.soldis-footer-middle {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 48px;
+	padding: 40px 0;
+}
+
+/* Footer Navigation */
+.soldis-footer-nav-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px 28px;
+}
+
+.soldis-footer-nav-item {
+	margin: 0;
+	padding: 0;
+}
+
+.soldis-footer-nav-link {
+	display: inline-block;
+	font-size: 0.9rem;
+	font-weight: 500;
+	color: var(--footer-text);
+	letter-spacing: 0.01em;
+	padding: 4px 0;
+	border-bottom: 1px solid transparent;
+	transition: color var(--footer-transition),
+	            border-color var(--footer-transition);
+}
+
+.soldis-footer-nav-link:hover {
+	color: var(--footer-gold);
+	border-bottom-color: rgba(199, 154, 59, 0.4);
+}
+
+/* Contact Info */
+.soldis-footer-contact {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	font-style: normal;
+	flex-shrink: 0;
+}
+
+.soldis-footer-contact-item {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	font-size: 0.9rem;
+	color: var(--footer-text);
+	text-decoration: none;
+	transition: color var(--footer-transition);
+}
+
+a.soldis-footer-contact-item:hover {
+	color: var(--footer-gold);
+}
+
+.soldis-footer-contact-item svg {
+	flex-shrink: 0;
+	opacity: 0.5;
+	transition: opacity var(--footer-transition);
+}
+
+a.soldis-footer-contact-item:hover svg {
+	opacity: 1;
+}
+
+/* ==========================================================================
+   BOTTOM BAR — Legal + Credit
+   ========================================================================== */
+
+.soldis-footer-bottom {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 24px;
+	padding: 20px 0 24px;
+	background-color: var(--footer-bg-deeper);
+	/* Pull to edges within inner */
+	margin: 0 calc(-1 * var(--soldis-container-padding, 0px));
+	padding-left: max(24px, calc((100vw - var(--soldis-container-width, 1200px)) / 2 + 24px));
+	padding-right: max(24px, calc((100vw - var(--soldis-container-width, 1200px)) / 2 + 24px));
+}
+
+.soldis-footer-legal {
+	display: flex;
+	align-items: center;
+	gap: 6px 20px;
+	flex-wrap: wrap;
+}
+
+.soldis-footer-copyright {
+	font-size: 0.82rem;
+	color: var(--footer-text-light);
+}
+
+.soldis-footer-legal-link {
+	font-size: 0.82rem;
+	color: var(--footer-text-light);
+	transition: color var(--footer-transition);
+	position: relative;
+}
+
+.soldis-footer-legal-link::before {
+	content: '·';
+	margin-right: 20px;
+	opacity: 0.4;
+}
+
+.soldis-footer-legal-link:hover {
+	color: var(--footer-gold);
+}
+
+/* Developer Credit */
+.soldis-footer-credit {
+	font-size: 0.78rem;
+	color: var(--footer-text-light);
+	white-space: nowrap;
+	flex-shrink: 0;
+}
+
+.soldis-footer-credit-link {
+	color: var(--footer-text-light);
+	font-weight: 500;
+	text-decoration: none;
+	transition: color var(--footer-transition);
+}
+
+.soldis-footer-credit-link:hover {
+	color: var(--footer-gold);
+}
+
+/* ==========================================================================
+   Scroll-to-Top Button
+   ========================================================================== */
+
+.soldis-scroll-top {
+	position: fixed;
+	bottom: 32px;
+	right: 32px;
+	width: 44px;
+	height: 44px;
+	border-radius: 50%;
+	background: var(--footer-gold, #c79a3b);
+	color: #ffffff;
+	border: none;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(12px);
+	transition: opacity 0.3s ease,
+	            visibility 0.3s ease,
+	            transform 0.3s ease,
+	            background 0.25s ease;
+	z-index: 999;
+	padding: 0;
+}
+
+.soldis-scroll-top.is-visible {
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0);
+}
+
+.soldis-scroll-top:hover {
+	background: var(--footer-gold-hover, #d9ae55);
+	transform: translateY(-2px);
+}
+
+.soldis-scroll-top:focus-visible {
+	outline: 2px solid var(--footer-gold, #c79a3b);
+	outline-offset: 3px;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+	.soldis-footer-inner {
+		padding-top: 60px;
+	}
+
+	.soldis-footer-top {
+		padding-bottom: 40px;
+	}
+
+	.soldis-footer-middle {
+		gap: 36px;
+		padding: 36px 0;
+	}
+}
+
+@media (max-width: 768px) {
+	.soldis-footer-inner {
+		padding-top: 48px;
+	}
+
+	/* Stack top row */
+	.soldis-footer-top {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 28px;
+		padding-bottom: 32px;
+	}
+
+	/* Social icons left-aligned on mobile */
+	.soldis-footer-social {
+		margin-top: 0;
+	}
+
+	/* Stack middle row */
+	.soldis-footer-middle {
+		flex-direction: column;
+		gap: 32px;
+		padding: 32px 0;
+	}
+
+	/* Nav wraps to grid on mobile */
+	.soldis-footer-nav-list {
+		gap: 6px 20px;
+	}
+
+	/* Stack bottom bar */
+	.soldis-footer-bottom {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 12px;
+		padding: 20px 24px;
+		margin: 0;
+		padding-left: 24px;
+		padding-right: 24px;
+	}
+
+	.soldis-footer-credit {
+		white-space: normal;
+	}
+
+	/* Scroll to top button */
+	.soldis-scroll-top {
+		bottom: 20px;
+		right: 20px;
+		width: 40px;
+		height: 40px;
+	}
+}
+
+@media (max-width: 480px) {
+	.soldis-footer-logo-text {
+		font-size: 1.3rem;
+	}
+
+	.soldis-footer-desc {
+		font-size: 0.9rem;
+	}
+
+	.soldis-footer-nav-link {
+		font-size: 0.88rem;
+	}
+
+	.soldis-footer-legal {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 8px;
+	}
+
+	.soldis-footer-legal-link::before {
+		display: none;
+	}
+}

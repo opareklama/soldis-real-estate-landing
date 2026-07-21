@@ -1,0 +1,234 @@
+/**
+ * Soldis Landing - FAQ Section CSS (Minimal Editorial Accordion)
+ */
+
+.soldis-faq-section {
+	background-color: var(--soldis-color-bg); /* Clean light background */
+	position: relative;
+	width: 100%;
+	color: var(--soldis-color-body);
+}
+
+.soldis-faq-section * {
+	box-sizing: border-box;
+}
+
+/* Centered Narrow Layout */
+.soldis-faq-layout {
+	max-width: 800px; /* Keep it narrow for excellent typography reading length */
+	margin: 0 auto;
+}
+
+/* Header */
+.soldis-faq-header {
+	text-align: center;
+	margin-bottom: 4rem;
+}
+
+.soldis-faq-eyebrow {
+	font-family: var(--soldis-font-heading);
+	color: var(--soldis-color-secondary); /* Gold */
+	text-transform: uppercase;
+	font-weight: 700;
+	letter-spacing: 2px;
+	font-size: 0.85rem;
+	margin-bottom: 1.5rem;
+	display: inline-block;
+}
+
+.soldis-faq-heading {
+	font-family: var(--soldis-font-heading);
+	color: var(--soldis-color-primary);
+	font-size: 3rem;
+	line-height: 1.15;
+	font-weight: 800;
+	margin-top: 0;
+	margin-bottom: 1.5rem;
+	letter-spacing: -1px;
+}
+
+.soldis-faq-description {
+	font-family: var(--soldis-font-body);
+	color: var(--soldis-color-body);
+	font-size: 1.25rem;
+	line-height: 1.6;
+}
+
+.soldis-faq-description p { margin: 0 0 1rem 0; }
+.soldis-faq-description p:last-child { margin-bottom: 0; }
+
+
+/* ==========================================================================
+   The Minimal Editorial Accordion
+   ========================================================================== */
+
+.soldis-faq-list {
+	width: 100%;
+}
+
+.soldis-faq-item {
+	border-top: 1px solid rgba(10, 37, 64, 0.1); /* Subtle dark border */
+}
+
+.soldis-faq-item:last-child {
+	border-bottom: 1px solid rgba(10, 37, 64, 0.1);
+}
+
+/* The Question Button */
+.soldis-faq-question {
+	width: 100% !important;
+	display: flex !important;
+	align-items: center;
+	justify-content: space-between;
+	text-align: left;
+	background: transparent !important;
+	border: none !important;
+	padding: 30px 0 !important;
+	margin: 0 !important;
+	cursor: pointer;
+	color: var(--soldis-color-primary) !important;
+	font-family: var(--soldis-font-heading);
+	transition: opacity 0.3s ease;
+	outline: none;
+	border-radius: 0 !important;
+	box-shadow: none !important;
+	appearance: none;
+}
+
+.soldis-faq-question:hover,
+.soldis-faq-question:focus-visible {
+	opacity: 0.7;
+}
+
+.soldis-faq-number {
+	font-size: 1.2rem;
+	font-weight: 600;
+	color: rgba(10, 37, 64, 0.3);
+	margin-right: 30px;
+	flex-shrink: 0;
+	transition: color 0.3s ease;
+}
+
+.soldis-faq-item.is-active .soldis-faq-number {
+	color: var(--soldis-color-secondary);
+}
+
+.soldis-faq-text {
+	font-size: 1.6rem;
+	font-weight: 600;
+	line-height: 1.4;
+	flex-grow: 1;
+	padding-right: 30px;
+	color: var(--soldis-color-primary); /* Ensure text color isn't pink */
+}
+
+/* The Plus/Minus Icon */
+.soldis-faq-icon {
+	flex-shrink: 0;
+	color: var(--soldis-color-primary) !important;
+	width: 24px;
+	height: 24px;
+	position: relative;
+	transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
+}
+
+.soldis-faq-item.is-active .soldis-faq-icon {
+	color: var(--soldis-color-secondary);
+	transform: rotate(180deg);
+}
+
+/* Animate the vertical line of the plus icon to disappear when active */
+.soldis-faq-icon .faq-icon-v {
+	transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+	transform-origin: center;
+}
+
+.soldis-faq-item.is-active .soldis-faq-icon .faq-icon-v {
+	opacity: 0;
+	transform: scaleY(0);
+}
+
+
+/* The Answer Content */
+.soldis-faq-answer-wrap {
+	overflow: hidden;
+	transition: height 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* When not using JS, default to display block/none. JS will override this by managing heights */
+.soldis-faq-answer-wrap[hidden] {
+	display: none;
+}
+
+.soldis-faq-answer-inner {
+	padding-left: calc(30px + 1.2rem); /* Align text with the question, pushing past the number */
+	padding-right: 50px;
+	padding-bottom: 30px;
+	font-family: var(--soldis-font-body);
+	font-size: 1.15rem;
+	line-height: 1.7;
+	color: var(--soldis-color-body);
+	opacity: 0;
+	transform: translateY(-10px);
+	transition: opacity 0.3s ease 0.1s, transform 0.3s cubic-bezier(0.25, 1, 0.5, 1) 0.1s;
+}
+
+.soldis-faq-item.is-active .soldis-faq-answer-inner {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+
+/* Animations */
+.soldis-animate-fade-up {
+	opacity: 0;
+	transform: translateY(30px);
+}
+
+.soldis-animated.soldis-animate-fade-up {
+	opacity: 1;
+	transform: translateY(0);
+	transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+/* ==========================================================================
+   Responsive Logic
+   ========================================================================== */
+
+@media (max-width: 768px) {
+	.soldis-faq-heading {
+		font-size: 2.2rem;
+	}
+
+	.soldis-faq-question {
+		padding: 20px 0;
+	}
+
+	.soldis-faq-number {
+		font-size: 1rem;
+		margin-right: 20px;
+	}
+
+	.soldis-faq-text {
+		font-size: 1.25rem;
+		padding-right: 15px;
+	}
+
+	.soldis-faq-answer-inner {
+		padding-left: 0; /* Remove the indentation on mobile for better space usage */
+		padding-right: 0;
+		padding-bottom: 20px;
+		font-size: 1.05rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.soldis-faq-heading {
+		font-size: 2rem;
+	}
+
+	.soldis-faq-text {
+		font-size: 1.15rem;
+	}
+}

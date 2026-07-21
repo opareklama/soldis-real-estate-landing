@@ -1,0 +1,255 @@
+/**
+ * Soldis Landing - Benefits Section CSS (Sticky Sidebar)
+ */
+
+.soldis-benefits-section {
+	background-color: var(--soldis-color-surface); /* Distinct background from previous section */
+	position: relative;
+	width: 100%;
+}
+
+.soldis-benefits-section * {
+	box-sizing: border-box;
+}
+
+/* Layout */
+.soldis-benefits-layout {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 80px;
+}
+
+/* Sticky Sidebar (Left) */
+.soldis-benefits-sidebar {
+	flex: 0 0 40%;
+	position: sticky;
+	top: 120px; /* Offset from top of viewport */
+}
+
+.soldis-benefits-eyebrow {
+	font-family: var(--soldis-font-heading);
+	color: var(--soldis-color-secondary);
+	text-transform: uppercase;
+	font-weight: 700;
+	letter-spacing: 2px;
+	font-size: 0.85rem;
+	margin-bottom: 1.5rem;
+	display: inline-block;
+}
+
+.soldis-benefits-heading {
+	font-family: var(--soldis-font-heading);
+	color: var(--soldis-color-primary);
+	font-size: 3.5rem;
+	line-height: 1.15;
+	font-weight: 800;
+	margin-top: 0;
+	margin-bottom: 1.5rem;
+	letter-spacing: -1px;
+}
+
+.soldis-benefits-description {
+	font-family: var(--soldis-font-body);
+	color: var(--soldis-color-body);
+	font-size: 1.25rem;
+	line-height: 1.6;
+}
+
+.soldis-benefits-description p { margin-bottom: 1rem; }
+.soldis-benefits-description p:last-child { margin-bottom: 0; }
+
+/* Scrolling List (Right) */
+.soldis-benefits-list {
+	flex: 0 0 55%;
+	display: flex;
+	flex-direction: column;
+	gap: 60px; /* Generous whitespace instead of lines */
+	padding-bottom: 100px;
+}
+
+.soldis-benefit-item {
+	display: flex;
+	gap: 30px;
+	padding-left: 30px;
+	border-left: 2px solid rgba(10, 37, 64, 0.1);
+	transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+	opacity: 0.4;
+}
+
+/* Active State via JS IntersectionObserver */
+.soldis-benefit-item.is-active,
+.soldis-benefit-item:hover {
+	opacity: 1;
+	border-left-color: var(--soldis-color-secondary);
+}
+
+.soldis-benefit-number {
+	font-family: var(--soldis-font-heading);
+	font-size: 1.5rem;
+	font-weight: 700;
+	color: var(--soldis-color-secondary);
+	line-height: 1;
+	margin-top: 5px;
+	opacity: 0.5;
+	transition: opacity 0.5s ease;
+}
+
+.soldis-benefit-item.is-active .soldis-benefit-number,
+.soldis-benefit-item:hover .soldis-benefit-number {
+	opacity: 1;
+}
+
+.soldis-benefit-icon {
+	width: 48px;
+	height: 48px;
+	flex-shrink: 0;
+	color: var(--soldis-color-primary);
+	transition: color 0.5s ease;
+}
+
+.soldis-benefit-icon svg {
+	width: 100%;
+	height: 100%;
+}
+
+.soldis-benefit-item.is-active .soldis-benefit-icon,
+.soldis-benefit-item:hover .soldis-benefit-icon {
+	color: var(--soldis-color-secondary);
+}
+
+.soldis-benefit-content {
+	flex-grow: 1;
+}
+
+.soldis-benefit-title {
+	font-family: var(--soldis-font-heading);
+	color: var(--soldis-color-primary);
+	font-size: 1.8rem;
+	font-weight: 600;
+	margin-top: 0;
+	margin-bottom: 12px;
+	line-height: 1.3;
+	transition: font-weight 0.5s ease;
+}
+
+.soldis-benefit-item.is-active .soldis-benefit-title,
+.soldis-benefit-item:hover .soldis-benefit-title {
+	font-weight: 800;
+}
+
+.soldis-benefit-desc {
+	font-family: var(--soldis-font-body);
+	color: var(--soldis-color-body);
+	font-size: 1.15rem;
+	line-height: 1.6;
+}
+
+.soldis-benefit-desc p { margin: 0; }
+
+/* Closing Banner */
+.soldis-benefits-closing-banner {
+	margin-top: 60px;
+	background: rgba(255, 255, 255, 0.7);
+	backdrop-filter: blur(15px);
+	-webkit-backdrop-filter: blur(15px);
+	border: 1px solid rgba(255, 255, 255, 0.5);
+	border-radius: 24px;
+	padding: 60px;
+	text-align: center;
+	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+	border-bottom: 4px solid var(--soldis-color-primary);
+}
+
+.soldis-benefits-closing-title {
+	font-family: var(--soldis-font-heading);
+	color: var(--soldis-color-primary);
+	font-size: 2.5rem;
+	font-weight: 800;
+	margin-top: 0;
+	margin-bottom: 15px;
+}
+
+.soldis-benefits-closing-desc {
+	font-family: var(--soldis-font-body);
+	color: var(--soldis-color-body);
+	font-size: 1.25rem;
+	max-width: 700px;
+	margin: 0 auto;
+	line-height: 1.6;
+}
+
+/* Animations */
+.soldis-animate-fade-up {
+	opacity: 0;
+	transform: translateY(40px);
+}
+
+.soldis-animated.soldis-animate-fade-up {
+	opacity: 1;
+	transform: translateY(0);
+	transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+	.soldis-benefits-layout {
+		flex-direction: column;
+		gap: 60px;
+	}
+
+	.soldis-benefits-sidebar {
+		flex: none;
+		position: static;
+		width: 100%;
+		text-align: center;
+	}
+
+	.soldis-benefits-heading {
+		font-size: 3rem;
+	}
+
+	.soldis-benefits-list {
+		flex: none;
+		width: 100%;
+		padding-bottom: 0;
+	}
+
+	.soldis-benefit-item {
+		opacity: 1; /* Always visible on mobile/tablet */
+	}
+}
+
+@media (max-width: 767px) {
+	.soldis-benefits-heading {
+		font-size: 2.25rem;
+	}
+
+	.soldis-benefit-item {
+		flex-direction: column;
+		gap: 15px;
+		padding-left: 20px;
+	}
+
+	.soldis-benefit-number {
+		font-size: 1.2rem;
+		margin-top: 0;
+	}
+
+	.soldis-benefit-icon {
+		width: 40px;
+		height: 40px;
+	}
+
+	.soldis-benefit-title {
+		font-size: 1.5rem;
+	}
+
+	.soldis-benefits-closing-banner {
+		padding: 40px 20px;
+	}
+
+	.soldis-benefits-closing-title {
+		font-size: 1.8rem;
+	}
+}

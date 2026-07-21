@@ -1,0 +1,435 @@
+/**
+ * Soldis Landing - Process Section CSS (Scroll-Animated Timeline - Central Layout)
+ */
+
+.soldis-process-section {
+	background-color: var(--soldis-color-bg);
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
+
+.soldis-process-section * {
+	box-sizing: border-box;
+}
+
+/* Header */
+.soldis-process-header {
+	text-align: center;
+	max-width: 650px;
+	margin: 0 auto 5rem auto;
+}
+
+.soldis-process-eyebrow {
+	font-family: var(--soldis-font-heading);
+	color: var(--soldis-color-secondary);
+	text-transform: uppercase;
+	font-weight: 700;
+	letter-spacing: 2px;
+	font-size: 0.85rem;
+	margin-bottom: 1.5rem;
+	display: inline-block;
+}
+
+.soldis-process-heading {
+	font-family: var(--soldis-font-heading);
+	color: var(--soldis-color-primary);
+	font-size: 3.5rem;
+	line-height: 1.15;
+	font-weight: 800;
+	margin-top: 0;
+	margin-bottom: 1.5rem;
+	letter-spacing: -1px;
+}
+
+.soldis-process-description {
+	font-family: var(--soldis-font-body);
+	color: var(--soldis-color-body);
+	font-size: 1.25rem;
+	line-height: 1.6;
+}
+
+.soldis-process-description p { margin: 0 0 1rem 0; }
+.soldis-process-description p:last-child { margin-bottom: 0; }
+
+/* Timeline Pipeline Wrap */
+.soldis-process-pipeline-wrap {
+	position: relative;
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+/* The Glowing Track */
+.soldis-process-track {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 2px;
+	background-color: rgba(10, 37, 64, 0.1);
+	border-radius: 2px;
+}
+
+.soldis-process-track-fill {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 0%;
+	background-color: var(--soldis-color-secondary);
+	border-radius: 2px;
+}
+
+/* The Steps Container */
+.soldis-process-steps {
+	display: flex;
+	flex-direction: column;
+	gap: 60px;
+	padding-bottom: 40px;
+}
+
+/* Individual Step Row */
+.soldis-process-step {
+	position: relative;
+	display: flex;
+	width: 100%;
+	opacity: 0.5;
+	transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+	transform: translateY(20px);
+}
+
+.soldis-process-step.is-active {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* Alternate Layout Alignments */
+.soldis-process-step.is-shifted-left {
+	justify-content: flex-start;
+}
+.soldis-process-step.is-shifted-right {
+	justify-content: flex-end;
+}
+
+/* Track Node */
+.soldis-process-node {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	top: 40px;
+	width: 16px;
+	height: 16px;
+	z-index: 2;
+}
+
+.soldis-process-node-inner {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	background-color: #ffffff;
+	border: 2px solid rgba(10, 37, 64, 0.2);
+	transition: all 0.4s ease;
+}
+
+.soldis-process-step.is-active .soldis-process-node-inner {
+	border-color: var(--soldis-color-secondary);
+	background-color: var(--soldis-color-secondary);
+	box-shadow: 0 0 15px rgba(184, 134, 11, 0.5);
+}
+
+/* Step Card */
+.soldis-process-card {
+	position: relative;
+	background: #ffffff; /* Pure white for premium look */
+	border: 1px solid rgba(0, 0, 0, 0.04);
+	border-radius: 20px;
+	padding: 40px;
+	width: 45%; /* Leaves 10% space in the center */
+	transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+	overflow: hidden;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+}
+
+.soldis-process-step.is-active .soldis-process-card {
+	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+	border-color: rgba(10, 37, 64, 0.08);
+}
+
+/* Large Background Number */
+.soldis-process-card-bg-number {
+	position: absolute;
+	top: -20px;
+	right: -10px;
+	font-family: var(--soldis-font-heading);
+	font-size: 180px;
+	font-weight: 900;
+	line-height: 1;
+	color: var(--soldis-color-primary);
+	opacity: 0.03;
+	z-index: 0;
+	pointer-events: none;
+	transition: transform 0.6s ease;
+}
+
+.soldis-process-step.is-shifted-left .soldis-process-card-bg-number {
+	right: -10px;
+	left: auto;
+}
+
+.soldis-process-step.is-shifted-right .soldis-process-card-bg-number {
+	left: -10px;
+	right: auto;
+}
+
+.soldis-process-step.is-active .soldis-process-card-bg-number {
+	transform: scale(1.05);
+}
+
+/* Card Inner Content */
+.soldis-process-card-inner {
+	position: relative;
+	z-index: 1;
+}
+
+.soldis-process-card-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin-bottom: 20px;
+}
+
+.soldis-process-step.is-shifted-right .soldis-process-card-header {
+	flex-direction: row-reverse;
+}
+
+.soldis-process-card-number {
+	font-family: var(--soldis-font-heading);
+	font-size: 1.25rem;
+	font-weight: 700;
+	color: var(--soldis-color-primary);
+	opacity: 0.5;
+	transition: color 0.4s ease, opacity 0.4s ease;
+}
+
+.soldis-process-step.is-active .soldis-process-card-number {
+	color: var(--soldis-color-secondary);
+	opacity: 1;
+}
+
+.soldis-process-card-icon {
+	width: 40px;
+	height: 40px;
+	color: var(--soldis-color-primary);
+	opacity: 0.5;
+	transition: color 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
+}
+
+.soldis-process-card-icon svg {
+	width: 100%;
+	height: 100%;
+}
+
+.soldis-process-step.is-active .soldis-process-card-icon {
+	color: var(--soldis-color-secondary);
+	opacity: 1;
+	transform: scale(1.1);
+}
+
+.soldis-process-card-title {
+	font-family: var(--soldis-font-heading);
+	color: var(--soldis-color-primary);
+	font-size: 1.75rem;
+	font-weight: 600;
+	margin-top: 0;
+	margin-bottom: 15px;
+	line-height: 1.3;
+	transition: font-weight 0.4s ease;
+}
+
+.soldis-process-step.is-shifted-right .soldis-process-card-title,
+.soldis-process-step.is-shifted-right .soldis-process-card-desc {
+	text-align: right;
+}
+
+.soldis-process-step.is-active .soldis-process-card-title {
+	font-weight: 800;
+}
+
+.soldis-process-card-desc {
+	font-family: var(--soldis-font-body);
+	color: var(--soldis-color-body);
+	font-size: 1.15rem;
+	line-height: 1.6;
+}
+
+.soldis-process-card-desc p { margin: 0; }
+
+/* Closing Banner */
+.soldis-process-closing-wrap {
+	margin-top: 100px;
+}
+
+.soldis-process-closing-banner {
+	background: var(--soldis-color-primary);
+	border-radius: 24px;
+	padding: 80px 40px;
+	text-align: center;
+	box-shadow: 0 20px 40px rgba(10, 37, 64, 0.15);
+	position: relative;
+	overflow: hidden;
+}
+
+.soldis-process-closing-banner::before {
+	content: '';
+	position: absolute;
+	top: 0; left: 0; right: 0; bottom: 0;
+	background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%);
+	pointer-events: none;
+}
+
+.soldis-process-closing-title {
+	font-family: var(--soldis-font-heading);
+	color: #ffffff;
+	font-size: 2.75rem;
+	font-weight: 800;
+	margin-top: 0;
+	margin-bottom: 20px;
+	position: relative;
+	z-index: 1;
+}
+
+.soldis-process-closing-desc {
+	font-family: var(--soldis-font-body);
+	color: rgba(255, 255, 255, 0.8);
+	font-size: 1.25rem;
+	max-width: 700px;
+	margin: 0 auto;
+	line-height: 1.6;
+	position: relative;
+	z-index: 1;
+}
+
+/* Animations */
+.soldis-animate-fade-up {
+	opacity: 0;
+	transform: translateY(40px);
+}
+
+.soldis-animated.soldis-animate-fade-up {
+	opacity: 1;
+	transform: translateY(0);
+	transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+	.soldis-process-heading {
+		font-size: 3rem;
+	}
+
+	.soldis-process-pipeline-wrap {
+		padding-left: 0;
+	}
+
+	.soldis-process-card {
+		width: 46%; /* slightly wider */
+	}
+
+	.soldis-process-closing-banner {
+		padding: 60px 30px;
+	}
+
+	.soldis-process-closing-title {
+		font-size: 2.25rem;
+	}
+}
+
+@media (max-width: 767px) {
+	.soldis-process-header {
+		margin-bottom: 3rem;
+	}
+
+	.soldis-process-heading {
+		font-size: 2.25rem;
+	}
+
+	.soldis-process-pipeline-wrap {
+		padding-left: 20px;
+	}
+
+	.soldis-process-track {
+		left: 20px;
+		transform: none;
+	}
+
+	.soldis-process-steps {
+		gap: 40px;
+	}
+
+	.soldis-process-step {
+		opacity: 1;
+		transform: none;
+		flex-direction: column;
+	}
+
+	.soldis-process-step.is-shifted-left,
+	.soldis-process-step.is-shifted-right {
+		justify-content: flex-start;
+	}
+
+	.soldis-process-card {
+		width: calc(100% - 30px);
+		margin-left: 30px;
+		padding: 30px 20px;
+	}
+
+	.soldis-process-step.is-shifted-left .soldis-process-card,
+	.soldis-process-step.is-shifted-right .soldis-process-card {
+		margin-left: 30px;
+	}
+
+	.soldis-process-step.is-shifted-right .soldis-process-card-header {
+		flex-direction: row; /* reset direction */
+	}
+
+	.soldis-process-step.is-shifted-right .soldis-process-card-bg-number {
+		left: auto;
+		right: -10px;
+	}
+
+	.soldis-process-step.is-shifted-right .soldis-process-card-title,
+	.soldis-process-step.is-shifted-right .soldis-process-card-desc {
+		text-align: left; /* reset alignment */
+	}
+
+	.soldis-process-node {
+		left: 20px;
+		transform: translateX(-50%);
+		top: 30px;
+	}
+
+	.soldis-process-card-title {
+		font-size: 1.5rem;
+	}
+
+	.soldis-process-card-bg-number {
+		font-size: 120px;
+		top: -10px;
+	}
+
+	.soldis-process-closing-wrap {
+		margin-top: 60px;
+	}
+
+	.soldis-process-closing-banner {
+		padding: 40px 20px;
+	}
+
+	.soldis-process-closing-title {
+		font-size: 1.8rem;
+	}
+}
