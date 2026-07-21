@@ -1,4 +1,6 @@
 <?php
+defined( 'ABSPATH' ) || exit;
+
 /**
  * Header Frontend View
  * 
@@ -53,21 +55,41 @@ if ( $logo_type === 'image' ) {
 			
 			<!-- Logo Area -->
 			<div class="soldis-header-brand">
-				<a href="<?php echo $logo_link; ?>" class="soldis-logo">
-					<?php if ( ! empty( $final_image ) ) : ?>
-						<img src="<?php echo esc_url( $final_image ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" class="soldis-logo-img">
-					<?php endif; ?>
-					<?php if ( ! empty( $final_text ) ) : ?>
-						<span class="soldis-logo-text"><?php echo esc_html( $final_text ); ?></span>
-					<?php endif; ?>
+				<a href="<?php defined( 'ABSPATH' ) || exit;
+
+echo $logo_link; ?>" class="soldis-logo">
+					<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $final_image ) ) : ?>
+						<img src="<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_url( $final_image ); ?>" alt="<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_attr( get_bloginfo( 'name' ) ); ?>" class="soldis-logo-img">
+					<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
+					<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $final_text ) ) : ?>
+						<span class="soldis-logo-text"><?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $final_text ); ?></span>
+					<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
 				</a>
 			</div>
 
 			<!-- Desktop Navigation -->
-			<nav class="soldis-header-nav" aria-label="<?php esc_attr_e( 'Main Navigation', 'soldis-landing' ); ?>">
+			<nav class="soldis-header-nav" aria-label="<?php defined( 'ABSPATH' ) || exit;
+
+esc_attr_e( 'Main Navigation', 'soldis-landing' ); ?>">
 				<ul class="soldis-nav-list">
 					<?php 
-					if ( ! empty( $options['nav'] ) && is_array( $options['nav'] ) ) {
+					defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['nav'] ) && is_array( $options['nav'] ) ) {
 						foreach ( $options['nav'] as $item ) {
 							if ( empty( $item['enabled'] ) ) continue;
 							$url = ! empty( $item['url'] ) ? esc_url( $item['url'] ) : '#';
@@ -83,7 +105,9 @@ if ( $logo_type === 'image' ) {
 			<!-- CTA Area -->
 			<div class="soldis-header-actions">
 				
-				<?php if ( ! empty( $options['header_contact_enable'] ) ) : ?>
+				<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['header_contact_enable'] ) ) : ?>
 					<div class="soldis-header-contact">
 						<div class="soldis-header-contact-icon">
 							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -91,30 +115,60 @@ if ( $logo_type === 'image' ) {
 							</svg>
 						</div>
 						<div class="soldis-header-contact-text">
-							<?php if ( ! empty( $options['header_contact_phone'] ) ) : ?>
-								<span class="soldis-header-phone"><?php echo esc_html( $options['header_contact_phone'] ); ?></span>
-							<?php endif; ?>
-							<?php if ( ! empty( $options['header_contact_email'] ) ) : ?>
-								<span class="soldis-header-email"><?php echo esc_html( $options['header_contact_email'] ); ?></span>
-							<?php endif; ?>
+							<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['header_contact_phone'] ) ) : ?>
+								<span class="soldis-header-phone"><?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $options['header_contact_phone'] ); ?></span>
+							<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
+							<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['header_contact_email'] ) ) : ?>
+								<span class="soldis-header-email"><?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $options['header_contact_email'] ); ?></span>
+							<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
 						</div>
 					</div>
-				<?php endif; ?>
+				<?php defined( 'ABSPATH' ) || exit;
 
-				<?php if ( ! empty( $options['cta_enable'] ) ) : 
+endif; ?>
+
+				<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['cta_enable'] ) ) : 
 					$cta_style_class = ( isset( $options['cta_style'] ) && $options['cta_style'] === 'secondary' ) ? 'soldis-btn-secondary' : 'soldis-btn-primary';
 				?>
-					<a href="<?php echo esc_url( $options['cta_url'] ); ?>" 
-					   target="<?php echo esc_attr( $options['cta_target'] ); ?>"
-					   <?php if ( ! empty( $options['cta_rel'] ) ) echo 'rel="' . esc_attr( $options['cta_rel'] ) . '"'; ?> 
-					   class="soldis-btn <?php echo esc_attr( $cta_style_class ); ?>">
-						<?php echo esc_html( $options['cta_text'] ); ?>
+					<a href="<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_url( $options['cta_url'] ); ?>" 
+					   target="<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_attr( $options['cta_target'] ); ?>"
+					   <?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['cta_rel'] ) ) echo 'rel="' . esc_attr( $options['cta_rel'] ) . '"'; ?> 
+					   class="soldis-btn <?php defined( 'ABSPATH' ) || exit;
+
+echo esc_attr( $cta_style_class ); ?>">
+						<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $options['cta_text'] ); ?>
 						<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 6px;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
 					</a>
-				<?php endif; ?>
+				<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
 				
 				<!-- Mobile Toggle -->
-				<button class="soldis-mobile-toggle" aria-label="<?php esc_attr_e( 'Open Menu', 'soldis-landing' ); ?>" aria-expanded="false" aria-controls="soldis-mobile-drawer">
+				<button class="soldis-mobile-toggle" aria-label="<?php defined( 'ABSPATH' ) || exit;
+
+esc_attr_e( 'Open Menu', 'soldis-landing' ); ?>" aria-expanded="false" aria-controls="soldis-mobile-drawer">
 					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 						<line x1="3" y1="12" x2="21" y2="12"></line>
 						<line x1="3" y1="6" x2="21" y2="6"></line>
@@ -132,15 +186,33 @@ if ( $logo_type === 'image' ) {
 	<div class="soldis-drawer-overlay"></div>
 	<div class="soldis-drawer-content">
 		<div class="soldis-drawer-header">
-			<a href="<?php echo $logo_link; ?>" class="soldis-logo">
-				<?php if ( ! empty( $final_image ) ) : ?>
-					<img src="<?php echo esc_url( $final_image ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" class="soldis-logo-img">
-				<?php endif; ?>
-				<?php if ( ! empty( $final_text ) ) : ?>
-					<span class="soldis-logo-text"><?php echo esc_html( $final_text ); ?></span>
-				<?php endif; ?>
+			<a href="<?php defined( 'ABSPATH' ) || exit;
+
+echo $logo_link; ?>" class="soldis-logo">
+				<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $final_image ) ) : ?>
+					<img src="<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_url( $final_image ); ?>" alt="<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_attr( get_bloginfo( 'name' ) ); ?>" class="soldis-logo-img">
+				<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
+				<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $final_text ) ) : ?>
+					<span class="soldis-logo-text"><?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $final_text ); ?></span>
+				<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
 			</a>
-			<button class="soldis-drawer-close" aria-label="<?php esc_attr_e( 'Close Menu', 'soldis-landing' ); ?>">
+			<button class="soldis-drawer-close" aria-label="<?php defined( 'ABSPATH' ) || exit;
+
+esc_attr_e( 'Close Menu', 'soldis-landing' ); ?>">
 				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 					<line x1="18" y1="6" x2="6" y2="18"></line>
 					<line x1="6" y1="6" x2="18" y2="18"></line>
@@ -150,7 +222,9 @@ if ( $logo_type === 'image' ) {
 		<nav class="soldis-drawer-nav">
 			<ul class="soldis-nav-list-mobile">
 				<?php 
-				if ( ! empty( $options['nav'] ) && is_array( $options['nav'] ) ) {
+				defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['nav'] ) && is_array( $options['nav'] ) ) {
 					foreach ( $options['nav'] as $item ) {
 						if ( empty( $item['enabled'] ) ) continue;
 						$url = ! empty( $item['url'] ) ? esc_url( $item['url'] ) : '#';
@@ -163,16 +237,31 @@ if ( $logo_type === 'image' ) {
 			</ul>
 		</nav>
 		<div class="soldis-drawer-actions">
-			<?php if ( ! empty( $options['cta_enable'] ) ) : 
+			<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['cta_enable'] ) ) : 
 				$cta_style_class = ( isset( $options['cta_style'] ) && $options['cta_style'] === 'secondary' ) ? 'soldis-btn-secondary' : 'soldis-btn-primary';
 			?>
-				<a href="<?php echo esc_url( $options['cta_url'] ); ?>" 
-				   target="<?php echo esc_attr( $options['cta_target'] ); ?>"
-				   <?php if ( ! empty( $options['cta_rel'] ) ) echo 'rel="' . esc_attr( $options['cta_rel'] ) . '"'; ?> 
-				   class="soldis-btn <?php echo esc_attr( $cta_style_class ); ?> soldis-btn-block">
-					<?php echo esc_html( $options['cta_text'] ); ?>
+				<a href="<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_url( $options['cta_url'] ); ?>" 
+				   target="<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_attr( $options['cta_target'] ); ?>"
+				   <?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['cta_rel'] ) ) echo 'rel="' . esc_attr( $options['cta_rel'] ) . '"'; ?> 
+				   class="soldis-btn <?php defined( 'ABSPATH' ) || exit;
+
+echo esc_attr( $cta_style_class ); ?> soldis-btn-block">
+					<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $options['cta_text'] ); ?>
 				</a>
-			<?php endif; ?>
+			<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
 		</div>
 	</div>
 </div>
+

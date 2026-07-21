@@ -1,5 +1,7 @@
 <?php
 
+defined( 'ABSPATH' ) || exit;
+
 namespace OpaReklama\SoldisLanding\Modules\Homepage\Sections\Process;
 
 /**
@@ -45,3 +47,4 @@ class Process {
 		return $options;
 	}
 }
+

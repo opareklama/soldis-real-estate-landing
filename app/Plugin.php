@@ -1,5 +1,7 @@
 <?php
 
+defined( 'ABSPATH' ) || exit;
+
 namespace OpaReklama\SoldisLanding;
 
 use OpaReklama\SoldisLanding\Admin\Admin;
@@ -78,3 +80,4 @@ class Plugin {
 		add_action( 'admin_enqueue_scripts', array( $this->admin, 'enqueue_scripts' ) );
 	}
 }
+

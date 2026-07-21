@@ -1,5 +1,7 @@
 <?php
 
+defined( 'ABSPATH' ) || exit;
+
 namespace OpaReklama\SoldisLanding\Modules\Homepage\Sections\Benefits;
 
 /**
@@ -46,3 +48,4 @@ class Benefits {
 		return $options;
 	}
 }
+

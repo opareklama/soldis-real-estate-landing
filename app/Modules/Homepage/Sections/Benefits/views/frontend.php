@@ -1,4 +1,6 @@
 <?php
+defined( 'ABSPATH' ) || exit;
+
 /**
  * Benefits Section Frontend View
  * 
@@ -26,82 +28,149 @@ function soldis_get_benefit_icon($name) {
 // Ensure active items start clean
 $animation_class = ! empty( $options['enable_animation'] ) ? 'soldis-animate-fade-up' : '';
 ?>
-<section class="soldis-benefits-section soldis-section" id="benefits" aria-label="<?php echo esc_attr( $options['heading'] ); ?>" role="region">
+<section class="soldis-benefits-section soldis-section" id="benefits" aria-label="<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_attr( $options['heading'] ); ?>" role="region">
 	<div class="soldis-container">
 		
 		<div class="soldis-benefits-layout">
 			
 			<!-- Sticky Left Sidebar -->
 			<div class="soldis-benefits-sidebar">
-				<div class="soldis-benefits-sticky-content <?php echo $animation_class; ?>">
-					<?php if ( ! empty( $options['eyebrow'] ) ) : ?>
+				<div class="soldis-benefits-sticky-content <?php defined( 'ABSPATH' ) || exit;
+
+echo $animation_class; ?>">
+					<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['eyebrow'] ) ) : ?>
 						<div class="soldis-benefits-eyebrow">
-							<?php echo esc_html( $options['eyebrow'] ); ?>
-						</div>
-					<?php endif; ?>
+							<?php defined( 'ABSPATH' ) || exit;
 
-					<?php if ( ! empty( $options['heading'] ) ) : ?>
+echo esc_html( $options['eyebrow'] ); ?>
+						</div>
+					<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
+
+					<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['heading'] ) ) : ?>
 						<h2 class="soldis-benefits-heading">
-							<?php echo esc_html( $options['heading'] ); ?>
-						</h2>
-					<?php endif; ?>
+							<?php defined( 'ABSPATH' ) || exit;
 
-					<?php if ( ! empty( $options['description'] ) ) : ?>
+echo esc_html( $options['heading'] ); ?>
+						</h2>
+					<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
+
+					<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['description'] ) ) : ?>
 						<div class="soldis-benefits-description">
-							<?php echo wpautop( esc_html( $options['description'] ) ); ?>
+							<?php defined( 'ABSPATH' ) || exit;
+
+echo wpautop( esc_html( $options['description'] ) ); ?>
 						</div>
-					<?php endif; ?>
+					<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
 				</div>
 			</div>
 
 			<!-- Scrolling Right List -->
 			<div class="soldis-benefits-list">
-				<?php if ( ! empty( $options['benefits'] ) ) : ?>
-					<?php foreach ( $options['benefits'] as $index => $benefit ) : ?>
-						<?php if ( ! empty( $benefit['enabled'] ) && ! empty( $benefit['title'] ) ) : ?>
+				<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['benefits'] ) ) : ?>
+					<?php defined( 'ABSPATH' ) || exit;
+
+foreach ( $options['benefits'] as $index => $benefit ) : ?>
+						<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $benefit['enabled'] ) && ! empty( $benefit['title'] ) ) : ?>
 							
 							<?php
-							// Format number (01, 02, etc.)
+							defined( 'ABSPATH' ) || exit;
+
+// Format number (01, 02, etc.)
 							$number = sprintf('%02d', $index + 1);
 							?>
 
-							<div class="soldis-benefit-item js-soldis-scroll-detect <?php echo $animation_class; ?>" style="animation-delay: <?php echo esc_attr( $index * 0.1 ); ?>s;">
+							<div class="soldis-benefit-item js-soldis-scroll-detect <?php defined( 'ABSPATH' ) || exit;
+
+echo $animation_class; ?>" style="animation-delay: <?php defined( 'ABSPATH' ) || exit;
+
+echo esc_attr( $index * 0.1 ); ?>s;">
 								
 								<div class="soldis-benefit-number">
-									<?php echo $number; ?>
+									<?php defined( 'ABSPATH' ) || exit;
+
+echo $number; ?>
 								</div>
 
 								<div class="soldis-benefit-icon">
-									<?php echo soldis_get_benefit_icon($benefit['icon']); ?>
+									<?php defined( 'ABSPATH' ) || exit;
+
+echo soldis_get_benefit_icon($benefit['icon']); ?>
 								</div>
 								
 								<div class="soldis-benefit-content">
-									<h3 class="soldis-benefit-title"><?php echo esc_html( $benefit['title'] ); ?></h3>
+									<h3 class="soldis-benefit-title"><?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $benefit['title'] ); ?></h3>
 									<div class="soldis-benefit-desc">
-										<?php echo wpautop( esc_html( $benefit['desc'] ) ); ?>
+										<?php defined( 'ABSPATH' ) || exit;
+
+echo wpautop( esc_html( $benefit['desc'] ) ); ?>
 									</div>
 								</div>
 								
 							</div>
 
-						<?php endif; ?>
-					<?php endforeach; ?>
-				<?php endif; ?>
+						<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
+					<?php defined( 'ABSPATH' ) || exit;
+
+endforeach; ?>
+				<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
 			</div>
 
 		</div> <!-- /.soldis-benefits-layout -->
 
 		<!-- Bottom Closing Banner -->
-		<?php if ( ! empty( $options['callout_enable'] ) ) : ?>
-			<div class="soldis-benefits-closing-banner <?php echo $animation_class; ?>">
-				<?php if ( ! empty( $options['callout_title'] ) ) : ?>
-					<h3 class="soldis-benefits-closing-title"><?php echo esc_html( $options['callout_title'] ); ?></h3>
-				<?php endif; ?>
-				<?php if ( ! empty( $options['callout_desc'] ) ) : ?>
-					<p class="soldis-benefits-closing-desc"><?php echo esc_html( $options['callout_desc'] ); ?></p>
-				<?php endif; ?>
+		<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['callout_enable'] ) ) : ?>
+			<div class="soldis-benefits-closing-banner <?php defined( 'ABSPATH' ) || exit;
+
+echo $animation_class; ?>">
+				<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['callout_title'] ) ) : ?>
+					<h3 class="soldis-benefits-closing-title"><?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $options['callout_title'] ); ?></h3>
+				<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
+				<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['callout_desc'] ) ) : ?>
+					<p class="soldis-benefits-closing-desc"><?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $options['callout_desc'] ); ?></p>
+				<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
 			</div>
-		<?php endif; ?>
+		<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
 
 	</div>
 </section>
+

@@ -1,4 +1,6 @@
 <?php
+defined( 'ABSPATH' ) || exit;
+
 /**
  * WhySoldis Section Frontend View
  * 
@@ -20,62 +22,129 @@ if (!function_exists('soldis_get_icon')) {
 	}
 }
 ?>
-<section class="soldis-why-section soldis-section" id="why-soldis" aria-label="<?php echo esc_attr( $options['heading'] ); ?>" role="region">
+<section class="soldis-why-section soldis-section" id="why-soldis" aria-label="<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_attr( $options['heading'] ); ?>" role="region">
 	<div class="soldis-container">
 		
-		<div class="soldis-why-header <?php echo ! empty( $options['enable_animation'] ) ? 'soldis-animate-fade-up' : ''; ?>">
-			<?php if ( ! empty( $options['eyebrow'] ) ) : ?>
+		<div class="soldis-why-header <?php defined( 'ABSPATH' ) || exit;
+
+echo ! empty( $options['enable_animation'] ) ? 'soldis-animate-fade-up' : ''; ?>">
+			<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['eyebrow'] ) ) : ?>
 				<div class="soldis-why-eyebrow">
-					<?php echo esc_html( $options['eyebrow'] ); ?>
-				</div>
-			<?php endif; ?>
+					<?php defined( 'ABSPATH' ) || exit;
 
-			<?php if ( ! empty( $options['heading'] ) ) : ?>
+echo esc_html( $options['eyebrow'] ); ?>
+				</div>
+			<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
+
+			<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['heading'] ) ) : ?>
 				<h2 class="soldis-why-heading">
-					<?php echo esc_html( $options['heading'] ); ?>
-				</h2>
-			<?php endif; ?>
+					<?php defined( 'ABSPATH' ) || exit;
 
-			<?php if ( ! empty( $options['description'] ) ) : ?>
+echo esc_html( $options['heading'] ); ?>
+				</h2>
+			<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
+
+			<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['description'] ) ) : ?>
 				<div class="soldis-why-description">
-					<?php echo wpautop( esc_html( $options['description'] ) ); ?>
+					<?php defined( 'ABSPATH' ) || exit;
+
+echo wpautop( esc_html( $options['description'] ) ); ?>
 				</div>
-			<?php endif; ?>
+			<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
 		</div>
 
-		<?php if ( ! empty( $options['cards'] ) ) : ?>
+		<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['cards'] ) ) : ?>
 			<div class="soldis-why-grid">
-				<?php foreach ( $options['cards'] as $index => $card ) : ?>
-					<?php if ( ! empty( $card['enabled'] ) && ! empty( $card['title'] ) ) : ?>
-						<div class="soldis-why-card soldis-bento-card-<?php echo esc_attr( $index + 1 ); ?> <?php echo ! empty( $options['enable_animation'] ) ? 'soldis-animate-fade-up' : ''; ?>" style="animation-delay: <?php echo esc_attr( $index * 0.1 ); ?>s;">
+				<?php defined( 'ABSPATH' ) || exit;
+
+foreach ( $options['cards'] as $index => $card ) : ?>
+					<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $card['enabled'] ) && ! empty( $card['title'] ) ) : ?>
+						<div class="soldis-why-card soldis-bento-card-<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_attr( $index + 1 ); ?> <?php defined( 'ABSPATH' ) || exit;
+
+echo ! empty( $options['enable_animation'] ) ? 'soldis-animate-fade-up' : ''; ?>" style="animation-delay: <?php defined( 'ABSPATH' ) || exit;
+
+echo esc_attr( $index * 0.1 ); ?>s;">
 							<div class="soldis-why-card-icon">
-								<?php echo soldis_get_icon($card['icon']); ?>
+								<?php defined( 'ABSPATH' ) || exit;
+
+echo soldis_get_icon($card['icon']); ?>
 							</div>
-							<h3 class="soldis-why-card-title"><?php echo esc_html( $card['title'] ); ?></h3>
+							<h3 class="soldis-why-card-title"><?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $card['title'] ); ?></h3>
 							<div class="soldis-why-card-desc">
-								<?php echo wpautop( esc_html( $card['desc'] ) ); ?>
+								<?php defined( 'ABSPATH' ) || exit;
+
+echo wpautop( esc_html( $card['desc'] ) ); ?>
 							</div>
 						</div>
-					<?php endif; ?>
-				<?php endforeach; ?>
-			</div>
-		<?php endif; ?>
+					<?php defined( 'ABSPATH' ) || exit;
 
-		<?php if ( ! empty( $options['callout_enable'] ) ) : ?>
-			<div class="soldis-why-callout <?php echo ! empty( $options['enable_animation'] ) ? 'soldis-animate-fade-up' : ''; ?>">
+endif; ?>
+				<?php defined( 'ABSPATH' ) || exit;
+
+endforeach; ?>
+			</div>
+		<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
+
+		<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['callout_enable'] ) ) : ?>
+			<div class="soldis-why-callout <?php defined( 'ABSPATH' ) || exit;
+
+echo ! empty( $options['enable_animation'] ) ? 'soldis-animate-fade-up' : ''; ?>">
 				<div class="soldis-why-callout-icon">
-					<?php echo soldis_get_icon($options['callout_icon']); ?>
+					<?php defined( 'ABSPATH' ) || exit;
+
+echo soldis_get_icon($options['callout_icon']); ?>
 				</div>
 				<div class="soldis-why-callout-content">
-					<?php if ( ! empty( $options['callout_title'] ) ) : ?>
-						<h3 class="soldis-why-callout-title"><?php echo nl2br( esc_html( $options['callout_title'] ) ); ?></h3>
-					<?php endif; ?>
-					<?php if ( ! empty( $options['callout_desc'] ) ) : ?>
-						<p class="soldis-why-callout-desc"><?php echo nl2br( esc_html( $options['callout_desc'] ) ); ?></p>
-					<?php endif; ?>
+					<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['callout_title'] ) ) : ?>
+						<h3 class="soldis-why-callout-title"><?php defined( 'ABSPATH' ) || exit;
+
+echo nl2br( esc_html( $options['callout_title'] ) ); ?></h3>
+					<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
+					<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['callout_desc'] ) ) : ?>
+						<p class="soldis-why-callout-desc"><?php defined( 'ABSPATH' ) || exit;
+
+echo nl2br( esc_html( $options['callout_desc'] ) ); ?></p>
+					<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
 				</div>
 			</div>
-		<?php endif; ?>
+		<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
 
 	</div>
 </section>
+

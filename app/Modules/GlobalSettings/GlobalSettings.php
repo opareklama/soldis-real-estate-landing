@@ -1,5 +1,7 @@
 <?php
 
+defined( 'ABSPATH' ) || exit;
+
 namespace OpaReklama\SoldisLanding\Modules\GlobalSettings;
 
 /**
@@ -121,3 +123,4 @@ class GlobalSettings {
 		</style>";
 	}
 }
+

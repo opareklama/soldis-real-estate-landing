@@ -1,5 +1,7 @@
 <?php
 
+defined( 'ABSPATH' ) || exit;
+
 namespace OpaReklama\SoldisLanding\Modules\Homepage\Sections\Investment;
 
 /**
@@ -43,3 +45,4 @@ class Investment {
 		return $options;
 	}
 }
+

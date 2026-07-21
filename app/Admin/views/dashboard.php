@@ -1,4 +1,6 @@
 <?php
+defined( 'ABSPATH' ) || exit;
+
 /**
  * SOLDIS Landing — Admin Dashboard (Command Center)
  *
@@ -179,7 +181,9 @@ function sd_dot( $status ) {
 	return '<span class="sd-dot ' . $cls . '" aria-hidden="true"></span>';
 }
 ?>
-<?php /* ─── Dashboard-scoped styles ─── */ ?>
+<?php defined( 'ABSPATH' ) || exit;
+
+/* ─── Dashboard-scoped styles ─── */ ?>
 <style id="soldis-dashboard-css">
 /* ── Layout ─────────────────────────────────────────────── */
 .sd-dashboard { --sd-gap: 20px; }
@@ -440,30 +444,50 @@ function sd_dot( $status ) {
 	<!-- ── Page Header ────────────────────────────────────────────────────── -->
 	<header class="soldis-admin-header">
 		<div class="soldis-admin-header-content">
-			<h1><?php echo esc_html( $company ); ?> — Command Center</h1>
-			<p class="soldis-admin-subtitle"><?php esc_html_e( 'Site health, module status and technical readiness at a glance', 'soldis-landing' ); ?></p>
+			<h1><?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $company ); ?> — Command Center</h1>
+			<p class="soldis-admin-subtitle"><?php defined( 'ABSPATH' ) || exit;
+
+esc_html_e( 'Site health, module status and technical readiness at a glance', 'soldis-landing' ); ?></p>
 		</div>
 		<div style="display:flex; align-items:center; gap:10px; position:relative; z-index:1;">
 			<div class="soldis-admin-header-badge">
-				<?php echo sd_dot( $is_https ? 'ok' : 'warn' ); ?>
-				<?php echo $is_https ? esc_html__( 'HTTPS Active', 'soldis-landing' ) : esc_html__( 'HTTP Only', 'soldis-landing' ); ?>
+				<?php defined( 'ABSPATH' ) || exit;
+
+echo sd_dot( $is_https ? 'ok' : 'warn' ); ?>
+				<?php defined( 'ABSPATH' ) || exit;
+
+echo $is_https ? esc_html__( 'HTTPS Active', 'soldis-landing' ) : esc_html__( 'HTTP Only', 'soldis-landing' ); ?>
 			</div>
 			<div class="soldis-admin-header-badge">
-				<strong>v<?php echo esc_html( $plugin_version ); ?></strong>
+				<strong>v<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $plugin_version ); ?></strong>
 			</div>
 		</div>
 	</header>
 
 	<!-- ── Quick Actions ──────────────────────────────────────────────────── -->
 	<div class="sd-quick-actions">
-		<?php foreach ( $quick_actions as $action ) : ?>
-			<a href="<?php echo esc_url( admin_url( 'admin.php?page=' . $action['page'] ) ); ?>" class="sd-action-btn">
+		<?php defined( 'ABSPATH' ) || exit;
+
+foreach ( $quick_actions as $action ) : ?>
+			<a href="<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_url( admin_url( 'admin.php?page=' . $action['page'] ) ); ?>" class="sd-action-btn">
 				<svg class="sd-action-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-					<path d="<?php echo esc_attr( $action['icon'] ); ?>"/>
+					<path d="<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_attr( $action['icon'] ); ?>"/>
 				</svg>
-				<?php echo esc_html( $action['label'] ); ?>
+				<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $action['label'] ); ?>
 			</a>
-		<?php endforeach; ?>
+		<?php defined( 'ABSPATH' ) || exit;
+
+endforeach; ?>
 	</div>
 
 	<!-- ── Widget Grid ────────────────────────────────────────────────────── -->
@@ -477,49 +501,99 @@ function sd_dot( $status ) {
 				<div class="sd-card-head-icon">
 					<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
 				</div>
-				<h3><?php esc_html_e( 'Site Overview', 'soldis-landing' ); ?></h3>
+				<h3><?php defined( 'ABSPATH' ) || exit;
+
+esc_html_e( 'Site Overview', 'soldis-landing' ); ?></h3>
 			</div>
 			<div class="sd-card-body">
 				<ul class="sd-row-list">
 					<li class="sd-row">
-						<?php echo sd_dot( 'info' ); ?>
-						<span class="sd-row-label"><?php esc_html_e( 'Plugin Version', 'soldis-landing' ); ?></span>
-						<span class="sd-row-value"><strong>v<?php echo esc_html( $plugin_version ); ?></strong></span>
+						<?php defined( 'ABSPATH' ) || exit;
+
+echo sd_dot( 'info' ); ?>
+						<span class="sd-row-label"><?php defined( 'ABSPATH' ) || exit;
+
+esc_html_e( 'Plugin Version', 'soldis-landing' ); ?></span>
+						<span class="sd-row-value"><strong>v<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $plugin_version ); ?></strong></span>
 					</li>
 					<li class="sd-row">
-						<?php echo sd_dot( 'info' ); ?>
-						<span class="sd-row-label"><?php esc_html_e( 'WordPress', 'soldis-landing' ); ?></span>
-						<span class="sd-row-value"><strong><?php echo esc_html( $wp_version ); ?></strong></span>
+						<?php defined( 'ABSPATH' ) || exit;
+
+echo sd_dot( 'info' ); ?>
+						<span class="sd-row-label"><?php defined( 'ABSPATH' ) || exit;
+
+esc_html_e( 'WordPress', 'soldis-landing' ); ?></span>
+						<span class="sd-row-value"><strong><?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $wp_version ); ?></strong></span>
 					</li>
 					<li class="sd-row">
-						<?php echo sd_dot( version_compare( $php_version, '8.0', '>=' ) ? 'ok' : 'warn' ); ?>
-						<span class="sd-row-label"><?php esc_html_e( 'PHP Version', 'soldis-landing' ); ?></span>
-						<span class="sd-row-value"><strong><?php echo esc_html( $php_version ); ?></strong></span>
+						<?php defined( 'ABSPATH' ) || exit;
+
+echo sd_dot( version_compare( $php_version, '8.0', '>=' ) ? 'ok' : 'warn' ); ?>
+						<span class="sd-row-label"><?php defined( 'ABSPATH' ) || exit;
+
+esc_html_e( 'PHP Version', 'soldis-landing' ); ?></span>
+						<span class="sd-row-value"><strong><?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $php_version ); ?></strong></span>
 					</li>
 					<li class="sd-row">
-						<?php echo sd_dot( 'info' ); ?>
-						<span class="sd-row-label"><?php esc_html_e( 'Site Language', 'soldis-landing' ); ?></span>
-						<span class="sd-row-value"><strong><?php echo esc_html( $site_language ); ?></strong></span>
+						<?php defined( 'ABSPATH' ) || exit;
+
+echo sd_dot( 'info' ); ?>
+						<span class="sd-row-label"><?php defined( 'ABSPATH' ) || exit;
+
+esc_html_e( 'Site Language', 'soldis-landing' ); ?></span>
+						<span class="sd-row-value"><strong><?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $site_language ); ?></strong></span>
 					</li>
 					<li class="sd-row">
-						<?php echo sd_dot( $is_https ? 'ok' : 'bad' ); ?>
-						<span class="sd-row-label"><?php esc_html_e( 'Site Protocol', 'soldis-landing' ); ?></span>
-						<span class="sd-row-value"><strong><?php echo $is_https ? 'HTTPS' : 'HTTP'; ?></strong></span>
+						<?php defined( 'ABSPATH' ) || exit;
+
+echo sd_dot( $is_https ? 'ok' : 'bad' ); ?>
+						<span class="sd-row-label"><?php defined( 'ABSPATH' ) || exit;
+
+esc_html_e( 'Site Protocol', 'soldis-landing' ); ?></span>
+						<span class="sd-row-value"><strong><?php defined( 'ABSPATH' ) || exit;
+
+echo $is_https ? 'HTTPS' : 'HTTP'; ?></strong></span>
 					</li>
 					<li class="sd-row">
-						<?php echo sd_dot( ! $wp_debug ? 'ok' : 'warn' ); ?>
-						<span class="sd-row-label"><?php esc_html_e( 'Debug Mode', 'soldis-landing' ); ?></span>
-						<span class="sd-row-value"><strong><?php echo $wp_debug ? esc_html__( 'ON (disable for prod)', 'soldis-landing' ) : esc_html__( 'OFF', 'soldis-landing' ); ?></strong></span>
+						<?php defined( 'ABSPATH' ) || exit;
+
+echo sd_dot( ! $wp_debug ? 'ok' : 'warn' ); ?>
+						<span class="sd-row-label"><?php defined( 'ABSPATH' ) || exit;
+
+esc_html_e( 'Debug Mode', 'soldis-landing' ); ?></span>
+						<span class="sd-row-value"><strong><?php defined( 'ABSPATH' ) || exit;
+
+echo $wp_debug ? esc_html__( 'ON (disable for prod)', 'soldis-landing' ) : esc_html__( 'OFF', 'soldis-landing' ); ?></strong></span>
 					</li>
 					<li class="sd-row">
-						<?php echo sd_dot( 'info' ); ?>
-						<span class="sd-row-label"><?php esc_html_e( 'Timezone', 'soldis-landing' ); ?></span>
-						<span class="sd-row-value"><strong><?php echo esc_html( $timezone ); ?></strong></span>
+						<?php defined( 'ABSPATH' ) || exit;
+
+echo sd_dot( 'info' ); ?>
+						<span class="sd-row-label"><?php defined( 'ABSPATH' ) || exit;
+
+esc_html_e( 'Timezone', 'soldis-landing' ); ?></span>
+						<span class="sd-row-value"><strong><?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $timezone ); ?></strong></span>
 					</li>
 					<li class="sd-row">
-						<?php echo sd_dot( 'info' ); ?>
-						<span class="sd-row-label"><?php esc_html_e( 'Database', 'soldis-landing' ); ?></span>
-						<span class="sd-row-value"><strong>MySQL <?php echo esc_html( $db_ver ); ?></strong></span>
+						<?php defined( 'ABSPATH' ) || exit;
+
+echo sd_dot( 'info' ); ?>
+						<span class="sd-row-label"><?php defined( 'ABSPATH' ) || exit;
+
+esc_html_e( 'Database', 'soldis-landing' ); ?></span>
+						<span class="sd-row-value"><strong>MySQL <?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $db_ver ); ?></strong></span>
 					</li>
 				</ul>
 			</div>
@@ -533,25 +607,43 @@ function sd_dot( $status ) {
 				<div class="sd-card-head-icon">
 					<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
 				</div>
-				<h3><?php esc_html_e( 'Homepage Progress', 'soldis-landing' ); ?></h3>
-				<span class="sd-badge <?php echo $sections_active >= 6 ? 'sd-badge--ok' : 'sd-badge--warn'; ?>">
-					<?php echo esc_html( $sections_active ); ?>/<?php echo count( $homepage_sections ); ?> <?php esc_html_e( 'Active', 'soldis-landing' ); ?>
+				<h3><?php defined( 'ABSPATH' ) || exit;
+
+esc_html_e( 'Homepage Progress', 'soldis-landing' ); ?></h3>
+				<span class="sd-badge <?php defined( 'ABSPATH' ) || exit;
+
+echo $sections_active >= 6 ? 'sd-badge--ok' : 'sd-badge--warn'; ?>">
+					<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $sections_active ); ?>/<?php defined( 'ABSPATH' ) || exit;
+
+echo count( $homepage_sections ); ?> <?php defined( 'ABSPATH' ) || exit;
+
+esc_html_e( 'Active', 'soldis-landing' ); ?>
 				</span>
 			</div>
 			<div class="sd-card-body">
 				<!-- Progress bar -->
 				<div class="sd-progress-wrap">
 					<div class="sd-progress-info">
-						<span><?php esc_html_e( 'Overall completion', 'soldis-landing' ); ?></span>
-						<strong><?php echo esc_html( $progress_pct ); ?>%</strong>
+						<span><?php defined( 'ABSPATH' ) || exit;
+
+esc_html_e( 'Overall completion', 'soldis-landing' ); ?></span>
+						<strong><?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $progress_pct ); ?>%</strong>
 					</div>
 					<div class="sd-progress-bar">
-						<div class="sd-progress-fill" style="width: <?php echo esc_attr( $progress_pct ); ?>%;"></div>
+						<div class="sd-progress-fill" style="width: <?php defined( 'ABSPATH' ) || exit;
+
+echo esc_attr( $progress_pct ); ?>%;"></div>
 					</div>
 				</div>
 				<!-- Section chips -->
 				<div class="sd-section-grid">
-					<?php foreach ( $homepage_sections as $s ) :
+					<?php defined( 'ABSPATH' ) || exit;
+
+foreach ( $homepage_sections as $s ) :
 						$chip_class = 'is-' . $s['status'];
 						if ( $s['status'] === 'active' ) {
 							$badge_label = __( 'Active', 'soldis-landing' );
@@ -561,26 +653,44 @@ function sd_dot( $status ) {
 							$badge_label = __( 'Coming Soon', 'soldis-landing' );
 						}
 					?>
-					<div class="sd-section-chip <?php echo esc_attr( $chip_class ); ?>">
-						<span class="sd-section-chip-icon" aria-hidden="true"><?php echo $s['icon']; ?></span>
-						<span style="flex:1;"><?php echo esc_html( $s['label'] ); ?></span>
-						<span class="sd-badge <?php echo $s['status'] === 'active' ? 'sd-badge--ok' : ( $s['status'] === 'off' ? 'sd-badge--warn' : 'sd-badge--coming' ); ?>" style="font-size:10px;">
-							<?php echo esc_html( $badge_label ); ?>
+					<div class="sd-section-chip <?php defined( 'ABSPATH' ) || exit;
+
+echo esc_attr( $chip_class ); ?>">
+						<span class="sd-section-chip-icon" aria-hidden="true"><?php defined( 'ABSPATH' ) || exit;
+
+echo $s['icon']; ?></span>
+						<span style="flex:1;"><?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $s['label'] ); ?></span>
+						<span class="sd-badge <?php defined( 'ABSPATH' ) || exit;
+
+echo $s['status'] === 'active' ? 'sd-badge--ok' : ( $s['status'] === 'off' ? 'sd-badge--warn' : 'sd-badge--coming' ); ?>" style="font-size:10px;">
+							<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $badge_label ); ?>
 						</span>
 					</div>
-					<?php endforeach; ?>
+					<?php defined( 'ABSPATH' ) || exit;
+
+endforeach; ?>
 				</div>
 			</div>
 			<div class="sd-card-foot" style="font-size:12px; color: #6b7280;">
-				<?php printf(
+				<?php defined( 'ABSPATH' ) || exit;
+
+printf(
 					esc_html__( '%1$d of %2$d sections built. %3$d sections coming soon.', 'soldis-landing' ),
 					(int) $sections_built,
 					count( $homepage_sections ),
 					(int) ( count( $homepage_sections ) - $sections_built )
 				); ?>
 				&ensp;·&ensp;
-				<a href="<?php echo esc_url( admin_url( 'admin.php?page=soldis-landing-homepage' ) ); ?>" style="color: #c79a3b; font-weight: 600; text-decoration: none;">
-					<?php esc_html_e( 'Manage Sections →', 'soldis-landing' ); ?>
+				<a href="<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_url( admin_url( 'admin.php?page=soldis-landing-homepage' ) ); ?>" style="color: #c79a3b; font-weight: 600; text-decoration: none;">
+					<?php defined( 'ABSPATH' ) || exit;
+
+esc_html_e( 'Manage Sections →', 'soldis-landing' ); ?>
 				</a>
 			</div>
 		</div>
@@ -593,11 +703,15 @@ function sd_dot( $status ) {
 				<div class="sd-card-head-icon">
 					<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
 				</div>
-				<h3><?php esc_html_e( 'Technical Health', 'soldis-landing' ); ?></h3>
+				<h3><?php defined( 'ABSPATH' ) || exit;
+
+esc_html_e( 'Technical Health', 'soldis-landing' ); ?></h3>
 			</div>
 			<div class="sd-card-body">
 				<?php
-				$tech_rows = array(
+				defined( 'ABSPATH' ) || exit;
+
+$tech_rows = array(
 					array(
 						'label' => 'HTTPS',
 						'status' => $is_https ? 'ok' : 'bad',
@@ -641,11 +755,19 @@ function sd_dot( $status ) {
 				);
 				foreach ( $tech_rows as $row ) : ?>
 				<div class="sd-health-row">
-					<?php echo sd_dot( $row['status'] ); ?>
-					<span class="sd-health-label"><?php echo esc_html( $row['label'] ); ?></span>
-					<span class="sd-health-note"><?php echo esc_html( $row['value'] ); ?></span>
+					<?php defined( 'ABSPATH' ) || exit;
+
+echo sd_dot( $row['status'] ); ?>
+					<span class="sd-health-label"><?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $row['label'] ); ?></span>
+					<span class="sd-health-note"><?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $row['value'] ); ?></span>
 				</div>
-				<?php endforeach; ?>
+				<?php defined( 'ABSPATH' ) || exit;
+
+endforeach; ?>
 			</div>
 		</div>
 
@@ -657,11 +779,15 @@ function sd_dot( $status ) {
 				<div class="sd-card-head-icon">
 					<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
 				</div>
-				<h3><?php esc_html_e( 'Performance Summary', 'soldis-landing' ); ?></h3>
+				<h3><?php defined( 'ABSPATH' ) || exit;
+
+esc_html_e( 'Performance Summary', 'soldis-landing' ); ?></h3>
 			</div>
 			<div class="sd-card-body">
 				<?php
-				$perf_rows = array(
+				defined( 'ABSPATH' ) || exit;
+
+$perf_rows = array(
 					array(
 						'label'  => 'WebP Support',
 						'status' => $has_webp ? 'ok' : 'warn',
@@ -695,11 +821,19 @@ function sd_dot( $status ) {
 				);
 				foreach ( $perf_rows as $row ) : ?>
 				<div class="sd-health-row">
-					<?php echo sd_dot( $row['status'] ); ?>
-					<span class="sd-health-label"><?php echo esc_html( $row['label'] ); ?></span>
-					<span class="sd-health-note"><?php echo esc_html( $row['note'] ); ?></span>
+					<?php defined( 'ABSPATH' ) || exit;
+
+echo sd_dot( $row['status'] ); ?>
+					<span class="sd-health-label"><?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $row['label'] ); ?></span>
+					<span class="sd-health-note"><?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $row['note'] ); ?></span>
 				</div>
-				<?php endforeach; ?>
+				<?php defined( 'ABSPATH' ) || exit;
+
+endforeach; ?>
 			</div>
 		</div>
 
@@ -711,25 +845,45 @@ function sd_dot( $status ) {
 				<div class="sd-card-head-icon">
 					<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93l-1.41 1.41M4.93 4.93l1.41 1.41M12 2v2M12 20v2M20 12h2M2 12h2M17.66 17.66l-1.41-1.41M6.34 17.66l1.41-1.41"/></svg>
 				</div>
-				<h3><?php esc_html_e( 'Global Settings', 'soldis-landing' ); ?></h3>
-				<span class="sd-badge <?php echo $global_complete === $global_total ? 'sd-badge--ok' : 'sd-badge--warn'; ?>">
-					<?php echo esc_html( $global_complete . '/' . $global_total ); ?>
+				<h3><?php defined( 'ABSPATH' ) || exit;
+
+esc_html_e( 'Global Settings', 'soldis-landing' ); ?></h3>
+				<span class="sd-badge <?php defined( 'ABSPATH' ) || exit;
+
+echo $global_complete === $global_total ? 'sd-badge--ok' : 'sd-badge--warn'; ?>">
+					<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $global_complete . '/' . $global_total ); ?>
 				</span>
 			</div>
 			<div class="sd-card-body">
-				<?php foreach ( $global_checks as $field => $is_set ) : ?>
+				<?php defined( 'ABSPATH' ) || exit;
+
+foreach ( $global_checks as $field => $is_set ) : ?>
 				<div class="sd-health-row">
-					<?php echo sd_dot( $is_set ? 'ok' : 'warn' ); ?>
-					<span class="sd-health-label"><?php echo esc_html( $field ); ?></span>
+					<?php defined( 'ABSPATH' ) || exit;
+
+echo sd_dot( $is_set ? 'ok' : 'warn' ); ?>
+					<span class="sd-health-label"><?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $field ); ?></span>
 					<span class="sd-health-note">
-						<?php echo $is_set ? esc_html__( 'Configured', 'soldis-landing' ) : esc_html__( 'Not set', 'soldis-landing' ); ?>
+						<?php defined( 'ABSPATH' ) || exit;
+
+echo $is_set ? esc_html__( 'Configured', 'soldis-landing' ) : esc_html__( 'Not set', 'soldis-landing' ); ?>
 					</span>
 				</div>
-				<?php endforeach; ?>
+				<?php defined( 'ABSPATH' ) || exit;
+
+endforeach; ?>
 			</div>
 			<div class="sd-card-foot">
-				<a href="<?php echo esc_url( admin_url( 'admin.php?page=soldis-landing-global' ) ); ?>" style="font-size:12px; color:#c79a3b; font-weight:600; text-decoration:none;">
-					<?php esc_html_e( 'Edit Global Settings →', 'soldis-landing' ); ?>
+				<a href="<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_url( admin_url( 'admin.php?page=soldis-landing-global' ) ); ?>" style="font-size:12px; color:#c79a3b; font-weight:600; text-decoration:none;">
+					<?php defined( 'ABSPATH' ) || exit;
+
+esc_html_e( 'Edit Global Settings →', 'soldis-landing' ); ?>
 				</a>
 			</div>
 		</div>
@@ -742,33 +896,65 @@ function sd_dot( $status ) {
 				<div class="sd-card-head-icon">
 					<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
 				</div>
-				<h3><?php esc_html_e( 'SEO Readiness', 'soldis-landing' ); ?></h3>
-				<span class="sd-badge <?php echo ( $seo_ok_count >= 5 ) ? 'sd-badge--ok' : ( $seo_ok_count >= 3 ? 'sd-badge--warn' : 'sd-badge--bad' ); ?>">
-					<?php echo esc_html( $seo_ok_count . '/' . count( $seo_checks ) ); ?> <?php esc_html_e( 'Checks Passed', 'soldis-landing' ); ?>
+				<h3><?php defined( 'ABSPATH' ) || exit;
+
+esc_html_e( 'SEO Readiness', 'soldis-landing' ); ?></h3>
+				<span class="sd-badge <?php defined( 'ABSPATH' ) || exit;
+
+echo ( $seo_ok_count >= 5 ) ? 'sd-badge--ok' : ( $seo_ok_count >= 3 ? 'sd-badge--warn' : 'sd-badge--bad' ); ?>">
+					<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $seo_ok_count . '/' . count( $seo_checks ) ); ?> <?php defined( 'ABSPATH' ) || exit;
+
+esc_html_e( 'Checks Passed', 'soldis-landing' ); ?>
 				</span>
-				<?php if ( $has_seo ) : ?>
+				<?php defined( 'ABSPATH' ) || exit;
+
+if ( $has_seo ) : ?>
 				<span class="sd-badge sd-badge--info" style="margin-left:4px;">
-					<?php echo esc_html( $seo_plugin_name ); ?>
+					<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $seo_plugin_name ); ?>
 				</span>
-				<?php endif; ?>
+				<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
 			</div>
 			<div class="sd-card-body">
 				<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 32px;">
-					<?php foreach ( $seo_checks as $check ) : ?>
+					<?php defined( 'ABSPATH' ) || exit;
+
+foreach ( $seo_checks as $check ) : ?>
 					<div class="sd-health-row">
-						<?php echo sd_dot( $check['ok'] ? 'ok' : 'warn' ); ?>
-						<span class="sd-health-label"><?php echo esc_html( $check['label'] ); ?></span>
-						<span class="sd-health-note"><?php echo esc_html( $check['note'] ); ?></span>
+						<?php defined( 'ABSPATH' ) || exit;
+
+echo sd_dot( $check['ok'] ? 'ok' : 'warn' ); ?>
+						<span class="sd-health-label"><?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $check['label'] ); ?></span>
+						<span class="sd-health-note"><?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $check['note'] ); ?></span>
 					</div>
-					<?php endforeach; ?>
+					<?php defined( 'ABSPATH' ) || exit;
+
+endforeach; ?>
 				</div>
 			</div>
-			<?php if ( ! $has_seo ) : ?>
+			<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! $has_seo ) : ?>
 			<div class="sd-card-foot" style="font-size:12px;">
-				<span style="color:#d97706; font-weight:600;">⚠ <?php esc_html_e( 'No SEO plugin detected.', 'soldis-landing' ); ?></span>
-				<?php esc_html_e( 'Install Yoast SEO or Rank Math to improve SEO readiness.', 'soldis-landing' ); ?>
+				<span style="color:#d97706; font-weight:600;">⚠ <?php defined( 'ABSPATH' ) || exit;
+
+esc_html_e( 'No SEO plugin detected.', 'soldis-landing' ); ?></span>
+				<?php defined( 'ABSPATH' ) || exit;
+
+esc_html_e( 'Install Yoast SEO or Rank Math to improve SEO readiness.', 'soldis-landing' ); ?>
 			</div>
-			<?php endif; ?>
+			<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
 		</div>
 
 		<!-- ═══════════════════════════════════════════════════
@@ -779,19 +965,33 @@ function sd_dot( $status ) {
 				<div class="sd-card-head-icon">
 					<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
 				</div>
-				<h3><?php esc_html_e( 'AEO & GEO Readiness', 'soldis-landing' ); ?></h3>
+				<h3><?php defined( 'ABSPATH' ) || exit;
+
+esc_html_e( 'AEO & GEO Readiness', 'soldis-landing' ); ?></h3>
 			</div>
 			<div class="sd-card-body">
 				<p style="font-size:12px; color:#6b7280; margin:0 0 12px;">
-					<?php esc_html_e( 'Answer Engine Optimization and Geo-targeted signals. Informational only — no crawling or API calls.', 'soldis-landing' ); ?>
+					<?php defined( 'ABSPATH' ) || exit;
+
+esc_html_e( 'Answer Engine Optimization and Geo-targeted signals. Informational only — no crawling or API calls.', 'soldis-landing' ); ?>
 				</p>
-				<?php foreach ( $aeo_items as $item ) : ?>
+				<?php defined( 'ABSPATH' ) || exit;
+
+foreach ( $aeo_items as $item ) : ?>
 				<div class="sd-health-row">
-					<?php echo sd_dot( $item['status'] ); ?>
-					<span class="sd-health-label"><?php echo esc_html( $item['label'] ); ?></span>
-					<span class="sd-health-note"><?php echo esc_html( $item['note'] ); ?></span>
+					<?php defined( 'ABSPATH' ) || exit;
+
+echo sd_dot( $item['status'] ); ?>
+					<span class="sd-health-label"><?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $item['label'] ); ?></span>
+					<span class="sd-health-note"><?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $item['note'] ); ?></span>
 				</div>
-				<?php endforeach; ?>
+				<?php defined( 'ABSPATH' ) || exit;
+
+endforeach; ?>
 			</div>
 		</div>
 
@@ -803,20 +1003,34 @@ function sd_dot( $status ) {
 				<div class="sd-card-head-icon">
 					<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
 				</div>
-				<h3><?php esc_html_e( 'Recent Plugin Updates', 'soldis-landing' ); ?></h3>
-				<span class="sd-badge sd-badge--info"><?php esc_html_e( 'Changelog', 'soldis-landing' ); ?></span>
+				<h3><?php defined( 'ABSPATH' ) || exit;
+
+esc_html_e( 'Recent Plugin Updates', 'soldis-landing' ); ?></h3>
+				<span class="sd-badge sd-badge--info"><?php defined( 'ABSPATH' ) || exit;
+
+esc_html_e( 'Changelog', 'soldis-landing' ); ?></span>
 			</div>
 			<div class="sd-card-body">
 				<ul class="sd-changelog">
-					<?php foreach ( $changelog as $entry ) : ?>
+					<?php defined( 'ABSPATH' ) || exit;
+
+foreach ( $changelog as $entry ) : ?>
 					<li class="sd-changelog-item">
-						<span class="sd-changelog-v">v<?php echo esc_html( $entry['v'] ); ?></span>
+						<span class="sd-changelog-v">v<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $entry['v'] ); ?></span>
 						<span class="sd-changelog-text">
-							<?php echo esc_html( $entry['note'] ); ?>
-							<br><span class="sd-changelog-date"><?php echo esc_html( $entry['date'] ); ?></span>
+							<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $entry['note'] ); ?>
+							<br><span class="sd-changelog-date"><?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $entry['date'] ); ?></span>
 						</span>
 					</li>
-					<?php endforeach; ?>
+					<?php defined( 'ABSPATH' ) || exit;
+
+endforeach; ?>
 				</ul>
 			</div>
 		</div>
@@ -828,14 +1042,18 @@ function sd_dot( $status ) {
 			<button class="sd-collapsible-trigger" id="sd-sysinfo-toggle" aria-expanded="false" aria-controls="sd-sysinfo-body">
 				<span style="display:flex; align-items:center; gap:10px;">
 					<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-					<?php esc_html_e( 'System Information', 'soldis-landing' ); ?>
+					<?php defined( 'ABSPATH' ) || exit;
+
+esc_html_e( 'System Information', 'soldis-landing' ); ?>
 				</span>
 				<svg class="sd-caret" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
 			</button>
 			<div class="sd-collapsible-body" id="sd-sysinfo-body">
 				<table class="sd-sysinfo">
 					<?php
-					$sysinfo = array(
+					defined( 'ABSPATH' ) || exit;
+
+$sysinfo = array(
 						__( 'PHP Version', 'soldis-landing' )      => PHP_VERSION,
 						__( 'PHP OS', 'soldis-landing' )           => $os,
 						__( 'Memory Limit', 'soldis-landing' )     => $php_memory,
@@ -853,10 +1071,16 @@ function sd_dot( $status ) {
 					);
 					foreach ( $sysinfo as $label => $value ) : ?>
 					<tr>
-						<td><?php echo esc_html( $label ); ?></td>
-						<td><?php echo esc_html( $value ); ?></td>
+						<td><?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $label ); ?></td>
+						<td><?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $value ); ?></td>
 					</tr>
-					<?php endforeach; ?>
+					<?php defined( 'ABSPATH' ) || exit;
+
+endforeach; ?>
 				</table>
 			</div>
 		</div>
@@ -865,9 +1089,15 @@ function sd_dot( $status ) {
 
 	<!-- Footer credit -->
 	<p style="text-align:center; font-size:12px; color:#9ca3af; margin-top:32px; padding-top:20px; border-top:1px solid #e4e6ea;">
-		<?php esc_html_e( 'SOLDIS Landing Plugin', 'soldis-landing' ); ?> &mdash; <?php esc_html_e( 'Engineered by', 'soldis-landing' ); ?>
+		<?php defined( 'ABSPATH' ) || exit;
+
+esc_html_e( 'SOLDIS Landing Plugin', 'soldis-landing' ); ?> &mdash; <?php defined( 'ABSPATH' ) || exit;
+
+esc_html_e( 'Engineered by', 'soldis-landing' ); ?>
 		<a href="https://opareklama.lt/" target="_blank" rel="noopener noreferrer" style="color:#c79a3b; font-weight:600; text-decoration:none;">OPA Reklama</a>
-		&mdash; v<?php echo esc_html( $plugin_version ); ?>
+		&mdash; v<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $plugin_version ); ?>
 	</p>
 
 </div><!-- /.sd-dashboard -->
@@ -887,3 +1117,4 @@ function sd_dot( $status ) {
 	});
 })();
 </script>
+

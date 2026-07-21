@@ -1,5 +1,7 @@
 <?php
 
+defined( 'ABSPATH' ) || exit;
+
 namespace OpaReklama\SoldisLanding\Modules\Homepage\Sections\Faq;
 
 /**
@@ -40,3 +42,4 @@ class Faq {
 		return $options;
 	}
 }
+

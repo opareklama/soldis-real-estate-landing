@@ -1,5 +1,7 @@
 <?php
 
+defined( 'ABSPATH' ) || exit;
+
 namespace OpaReklama\SoldisLanding\Modules\Homepage;
 
 /**
@@ -53,3 +55,4 @@ class Homepage {
 		return $template;
 	}
 }
+

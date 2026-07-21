@@ -1,5 +1,7 @@
 <?php
 
+defined( 'ABSPATH' ) || exit;
+
 namespace OpaReklama\SoldisLanding\Modules\Homepage\Sections\Hero;
 
 /**
@@ -82,3 +84,4 @@ class Hero {
 		return $options;
 	}
 }
+

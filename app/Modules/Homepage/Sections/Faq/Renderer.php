@@ -1,5 +1,7 @@
 <?php
 
+defined( 'ABSPATH' ) || exit;
+
 namespace OpaReklama\SoldisLanding\Modules\Homepage\Sections\Faq;
 
 /**
@@ -27,6 +29,7 @@ class Renderer {
 	public function run() {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_assets' ) );
 		add_action( 'wp_head', array( $this, 'render_dynamic_css' ) );
+		add_action( 'wp_head', array( $this, 'render_json_ld' ) );
 	}
 
 	/**
@@ -108,4 +111,47 @@ class Renderer {
 
 		require SOLDIS_LANDING_PATH . 'app/Modules/Homepage/Sections/Faq/views/frontend.php';
 	}
+
+	/**
+	 * Render JSON-LD Structured Data for Google AEO/SEO.
+	 */
+	public function render_json_ld() {
+		$options = $this->model->get_options();
+		
+		if ( empty( $options['enable_faq'] ) || empty( $options['faqs'] ) || ! is_array( $options['faqs'] ) ) {
+			return;
+		}
+
+		$main_entity = array();
+
+		foreach ( $options['faqs'] as $faq ) {
+			if ( empty( $faq['enabled'] ) || empty( $faq['question'] ) || empty( $faq['answer'] ) ) {
+				continue;
+			}
+
+			$main_entity[] = array(
+				'@type'          => 'Question',
+				'name'           => wp_strip_all_tags( $faq['question'] ),
+				'acceptedAnswer' => array(
+					'@type' => 'Answer',
+					'text'  => wp_kses_post( $faq['answer'] ),
+				),
+			);
+		}
+
+		if ( empty( $main_entity ) ) {
+			return;
+		}
+
+		$schema = array(
+			'@context'   => 'https://schema.org',
+			'@type'      => 'FAQPage',
+			'mainEntity' => $main_entity,
+		);
+
+		echo '<!-- SOLDIS FAQ Schema (AEO/SEO Optimized) -->';
+		echo '<script type="application/ld+json">' . wp_json_encode( $schema ) . '</script>';
+		echo "\n";
+	}
 }
+

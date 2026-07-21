@@ -1,5 +1,7 @@
 <?php
 
+defined( 'ABSPATH' ) || exit;
+
 namespace OpaReklama\SoldisLanding\Modules\Homepage\Sections\Hero;
 
 /**
@@ -45,3 +47,4 @@ class Admin {
 		require SOLDIS_LANDING_PATH . 'app/Modules/Homepage/Sections/Hero/views/admin.php';
 	}
 }
+

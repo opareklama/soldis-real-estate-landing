@@ -1,4 +1,6 @@
 <?php
+defined( 'ABSPATH' ) || exit;
+
 /**
  * Investment Section Frontend View
  * 
@@ -20,50 +22,86 @@ if (!function_exists('soldis_get_investment_icon')) {
 
 $animation_class = ! empty( $options['enable_animation'] ) ? 'soldis-animate-fade-up' : '';
 ?>
-<section class="soldis-investment-section soldis-section" id="investment" aria-label="<?php echo esc_attr( $options['heading'] ); ?>" role="region">
+<section class="soldis-investment-section soldis-section" id="investment" aria-label="<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_attr( $options['heading'] ); ?>" role="region">
 	<!-- Deep Canvas Gradient Overlay -->
 	<div class="soldis-inv-canvas-glow"></div>
 
 	<div class="soldis-container">
 		
 		<!-- Header -->
-		<div class="soldis-inv-header <?php echo $animation_class; ?>">
-			<?php if ( ! empty( $options['eyebrow'] ) ) : ?>
+		<div class="soldis-inv-header <?php defined( 'ABSPATH' ) || exit;
+
+echo $animation_class; ?>">
+			<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['eyebrow'] ) ) : ?>
 				<div class="soldis-inv-eyebrow">
-					<?php echo esc_html( $options['eyebrow'] ); ?>
-				</div>
-			<?php endif; ?>
+					<?php defined( 'ABSPATH' ) || exit;
 
-			<?php if ( ! empty( $options['heading'] ) ) : ?>
+echo esc_html( $options['eyebrow'] ); ?>
+				</div>
+			<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
+
+			<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['heading'] ) ) : ?>
 				<h2 class="soldis-inv-heading">
-					<?php echo esc_html( $options['heading'] ); ?>
-				</h2>
-			<?php endif; ?>
+					<?php defined( 'ABSPATH' ) || exit;
 
-			<?php if ( ! empty( $options['description'] ) ) : ?>
+echo esc_html( $options['heading'] ); ?>
+				</h2>
+			<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
+
+			<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['description'] ) ) : ?>
 				<div class="soldis-inv-description">
-					<?php echo wpautop( esc_html( $options['description'] ) ); ?>
+					<?php defined( 'ABSPATH' ) || exit;
+
+echo wpautop( esc_html( $options['description'] ) ); ?>
 				</div>
-			<?php endif; ?>
+			<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
 		</div>
 
 		<!-- The Marketing Pillars (Dynamic Expansion Accordion) -->
-		<div class="soldis-inv-pillars-wrap <?php echo $animation_class; ?>">
+		<div class="soldis-inv-pillars-wrap <?php defined( 'ABSPATH' ) || exit;
+
+echo $animation_class; ?>">
 			<div class="soldis-inv-pillars" id="soldis-inv-pillars">
-				<?php if ( ! empty( $options['blocks'] ) ) : ?>
+				<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['blocks'] ) ) : ?>
 					<?php 
-					$first_active = true;
+					defined( 'ABSPATH' ) || exit;
+
+$first_active = true;
 					foreach ( $options['blocks'] as $index => $block ) : 
 					?>
-						<?php if ( ! empty( $block['enabled'] ) && ! empty( $block['title'] ) ) : ?>
+						<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $block['enabled'] ) && ! empty( $block['title'] ) ) : ?>
 							
 							<?php
-							$number = sprintf('%02d', $index + 1);
+							defined( 'ABSPATH' ) || exit;
+
+$number = sprintf('%02d', $index + 1);
 							$active_class = $first_active ? 'is-active' : '';
 							$first_active = false;
 							?>
 
-							<article class="soldis-inv-pillar js-soldis-inv-pillar <?php echo $active_class; ?>" tabindex="0" role="button" aria-expanded="<?php echo $active_class ? 'true' : 'false'; ?>">
+							<article class="soldis-inv-pillar js-soldis-inv-pillar <?php defined( 'ABSPATH' ) || exit;
+
+echo $active_class; ?>" tabindex="0" role="button" aria-expanded="<?php defined( 'ABSPATH' ) || exit;
+
+echo $active_class ? 'true' : 'false'; ?>">
 								
 								<!-- Background Image/Gradient (Optional, currently just premium glass) -->
 								<div class="soldis-inv-pillar-bg"></div>
@@ -71,18 +109,26 @@ $animation_class = ! empty( $options['enable_animation'] ) ? 'soldis-animate-fad
 								<!-- Content -->
 								<div class="soldis-inv-pillar-content">
 									<div class="soldis-inv-pillar-header">
-										<div class="soldis-inv-pillar-num"><?php echo $number; ?></div>
+										<div class="soldis-inv-pillar-num"><?php defined( 'ABSPATH' ) || exit;
+
+echo $number; ?></div>
 										<div class="soldis-inv-pillar-icon">
-											<?php echo soldis_get_investment_icon($block['icon']); ?>
+											<?php defined( 'ABSPATH' ) || exit;
+
+echo soldis_get_investment_icon($block['icon']); ?>
 										</div>
 									</div>
 
 									<div class="soldis-inv-pillar-body">
-										<h3 class="soldis-inv-pillar-title"><?php echo esc_html( $block['title'] ); ?></h3>
+										<h3 class="soldis-inv-pillar-title"><?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $block['title'] ); ?></h3>
 										
 										<div class="soldis-inv-pillar-desc-wrap">
 											<div class="soldis-inv-pillar-desc">
-												<?php echo wpautop( esc_html( $block['desc'] ) ); ?>
+												<?php defined( 'ABSPATH' ) || exit;
+
+echo wpautop( esc_html( $block['desc'] ) ); ?>
 											</div>
 										</div>
 									</div>
@@ -90,27 +136,52 @@ $animation_class = ! empty( $options['enable_animation'] ) ? 'soldis-animate-fad
 								
 							</article>
 
-						<?php endif; ?>
-					<?php endforeach; ?>
-				<?php endif; ?>
+						<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
+					<?php defined( 'ABSPATH' ) || exit;
+
+endforeach; ?>
+				<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
 			</div>
 		</div> <!-- /.soldis-inv-pillars-wrap -->
 
 		<!-- Bottom Closing Callout -->
-		<?php if ( ! empty( $options['callout_enable'] ) ) : ?>
-			<div class="soldis-inv-closing-wrap <?php echo $animation_class; ?>">
+		<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['callout_enable'] ) ) : ?>
+			<div class="soldis-inv-closing-wrap <?php defined( 'ABSPATH' ) || exit;
+
+echo $animation_class; ?>">
 				<div class="soldis-inv-closing-box">
-					<?php if ( ! empty( $options['callout_title'] ) ) : ?>
-						<h3 class="soldis-inv-closing-title"><?php echo esc_html( $options['callout_title'] ); ?></h3>
-					<?php endif; ?>
-					<?php if ( ! empty( $options['callout_desc'] ) ) : ?>
+					<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['callout_title'] ) ) : ?>
+						<h3 class="soldis-inv-closing-title"><?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $options['callout_title'] ); ?></h3>
+					<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
+					<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['callout_desc'] ) ) : ?>
 						<div class="soldis-inv-closing-desc">
-							<?php echo wpautop( esc_html( $options['callout_desc'] ) ); ?>
+							<?php defined( 'ABSPATH' ) || exit;
+
+echo wpautop( esc_html( $options['callout_desc'] ) ); ?>
 						</div>
-					<?php endif; ?>
+					<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
 				</div>
 			</div>
-		<?php endif; ?>
+		<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
 
 	</div> <!-- /.soldis-container -->
 </section>
+

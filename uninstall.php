@@ -1,5 +1,7 @@
 <?php
 
+defined( 'ABSPATH' ) || exit;
+
 /**
  * Fired when the plugin is uninstalled.
  */
@@ -10,3 +12,4 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 }
 
 // Add uninstall routines here (e.g. deleting options, custom tables)
+

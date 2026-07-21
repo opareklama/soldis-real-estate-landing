@@ -1,13 +1,21 @@
 <?php
+defined( 'ABSPATH' ) || exit;
+
 /**
  * Blank Canvas Template for SOLDIS Landing Page
  */
 ?><!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html <?php defined( 'ABSPATH' ) || exit;
+
+language_attributes(); ?>>
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta charset="<?php defined( 'ABSPATH' ) || exit;
+
+bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<?php wp_head(); ?>
+	<?php defined( 'ABSPATH' ) || exit;
+
+wp_head(); ?>
 	<style>
 		/* Ensure no theme margin/padding affects the canvas */
 		html, body {
@@ -18,18 +26,27 @@
 		}
 	</style>
 </head>
-<body <?php body_class( 'soldis-landing-canvas' ); ?>>
-	<?php wp_body_open(); ?>
+<body <?php defined( 'ABSPATH' ) || exit;
+
+body_class( 'soldis-landing-canvas' ); ?>>
+	<?php defined( 'ABSPATH' ) || exit;
+
+wp_body_open(); ?>
 	
 	<main id="soldis-landing-content">
 		<?php
-		while ( have_posts() ) :
+		defined( 'ABSPATH' ) || exit;
+
+while ( have_posts() ) :
 			the_post();
 			the_content();
 		endwhile;
 		?>
 	</main>
 
-	<?php wp_footer(); ?>
+	<?php defined( 'ABSPATH' ) || exit;
+
+wp_footer(); ?>
 </body>
 </html>
+

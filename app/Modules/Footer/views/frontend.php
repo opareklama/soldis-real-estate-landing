@@ -1,4 +1,6 @@
 <?php
+defined( 'ABSPATH' ) || exit;
+
 /**
  * Footer Frontend View
  *
@@ -75,104 +77,210 @@ if ( ! empty( $options['logo_link_type'] ) && $options['logo_link_type'] === 'cu
 				<!-- Brand Block -->
 				<div class="soldis-footer-brand">
 
-					<?php if ( ! empty( $options['show_logo'] ) ) : ?>
-						<a href="<?php echo $logo_link; ?>" class="soldis-footer-logo" aria-label="<?php echo esc_attr( $company_name ); ?>">
-							<?php if ( ! empty( $final_logo_image ) ) : ?>
-								<img src="<?php echo esc_url( $final_logo_image ); ?>"
-									alt="<?php echo esc_attr( $company_name ); ?>"
-									class="soldis-footer-logo-img">
-							<?php endif; ?>
-							<?php if ( ! empty( $final_logo_text ) ) : ?>
-								<span class="soldis-footer-logo-text"><?php echo esc_html( $final_logo_text ); ?></span>
-							<?php endif; ?>
-						</a>
-					<?php endif; ?>
+					<?php defined( 'ABSPATH' ) || exit;
 
-					<?php if ( ! empty( $options['show_desc'] ) && ! empty( $options['description'] ) ) : ?>
-						<p class="soldis-footer-desc"><?php echo esc_html( $options['description'] ); ?></p>
-					<?php endif; ?>
+if ( ! empty( $options['show_logo'] ) ) : ?>
+						<a href="<?php defined( 'ABSPATH' ) || exit;
+
+echo $logo_link; ?>" class="soldis-footer-logo" aria-label="<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_attr( $company_name ); ?>">
+							<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $final_logo_image ) ) : ?>
+								<img src="<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_url( $final_logo_image ); ?>"
+									alt="<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_attr( $company_name ); ?>"
+									class="soldis-footer-logo-img">
+							<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
+							<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $final_logo_text ) ) : ?>
+								<span class="soldis-footer-logo-text"><?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $final_logo_text ); ?></span>
+							<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
+						</a>
+					<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
+
+					<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['show_desc'] ) && ! empty( $options['description'] ) ) : ?>
+						<p class="soldis-footer-desc"><?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $options['description'] ); ?></p>
+					<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
 
 				</div><!-- /.soldis-footer-brand -->
 
 				<!-- Social Icons -->
-				<?php if ( ! empty( $options['show_social'] ) && ! empty( $active_socials ) ) : ?>
-					<div class="soldis-footer-social" aria-label="<?php esc_attr_e( 'Social Media', 'soldis-landing' ); ?>">
-						<?php foreach ( $active_socials as $key => $social ) : ?>
-							<a href="<?php echo esc_url( $social['url'] ); ?>"
+				<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['show_social'] ) && ! empty( $active_socials ) ) : ?>
+					<div class="soldis-footer-social" aria-label="<?php defined( 'ABSPATH' ) || exit;
+
+esc_attr_e( 'Social Media', 'soldis-landing' ); ?>">
+						<?php defined( 'ABSPATH' ) || exit;
+
+foreach ( $active_socials as $key => $social ) : ?>
+							<a href="<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_url( $social['url'] ); ?>"
 								target="_blank"
 								rel="noopener noreferrer"
 								class="soldis-footer-social-link"
-								aria-label="<?php echo esc_attr( $social['label'] ); ?>">
+								aria-label="<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_attr( $social['label'] ); ?>">
 								<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-									<?php echo $social['icon']; // Pre-built, no user input — safe ?>
+									<?php defined( 'ABSPATH' ) || exit;
+
+echo $social['icon']; // Pre-built, no user input — safe ?>
 								</svg>
 							</a>
-						<?php endforeach; ?>
+						<?php defined( 'ABSPATH' ) || exit;
+
+endforeach; ?>
 					</div>
-				<?php endif; ?>
+				<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
 
 			</div><!-- /.soldis-footer-top -->
 
 			<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 			     MIDDLE: Nav + Contact
 			     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-			<?php $has_middle = ! empty( $options['show_nav'] ) || ! empty( $options['show_contact'] ); ?>
-			<?php if ( $has_middle ) : ?>
+			<?php defined( 'ABSPATH' ) || exit;
+
+$has_middle = ! empty( $options['show_nav'] ) || ! empty( $options['show_contact'] ); ?>
+			<?php defined( 'ABSPATH' ) || exit;
+
+if ( $has_middle ) : ?>
 			<div class="soldis-footer-divider" aria-hidden="true"></div>
 			<div class="soldis-footer-middle">
 
 				<!-- Navigation -->
-				<?php if ( ! empty( $options['show_nav'] ) && ! empty( $options['nav'] ) ) : ?>
-					<nav class="soldis-footer-nav" aria-label="<?php esc_attr_e( 'Footer Navigation', 'soldis-landing' ); ?>">
+				<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['show_nav'] ) && ! empty( $options['nav'] ) ) : ?>
+					<nav class="soldis-footer-nav" aria-label="<?php defined( 'ABSPATH' ) || exit;
+
+esc_attr_e( 'Footer Navigation', 'soldis-landing' ); ?>">
 						<ul class="soldis-footer-nav-list">
-							<?php foreach ( $options['nav'] as $item ) : ?>
-								<?php if ( empty( $item['enabled'] ) || empty( $item['label'] ) ) continue; ?>
+							<?php defined( 'ABSPATH' ) || exit;
+
+foreach ( $options['nav'] as $item ) : ?>
+								<?php defined( 'ABSPATH' ) || exit;
+
+if ( empty( $item['enabled'] ) || empty( $item['label'] ) ) continue; ?>
 								<li class="soldis-footer-nav-item">
-									<a href="<?php echo esc_url( $item['url'] ?? '#' ); ?>"
-										target="<?php echo esc_attr( $item['target'] ?? '_self' ); ?>"
+									<a href="<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_url( $item['url'] ?? '#' ); ?>"
+										target="<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_attr( $item['target'] ?? '_self' ); ?>"
 										class="soldis-footer-nav-link">
-										<?php echo esc_html( $item['label'] ); ?>
+										<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $item['label'] ); ?>
 									</a>
 								</li>
-							<?php endforeach; ?>
+							<?php defined( 'ABSPATH' ) || exit;
+
+endforeach; ?>
 						</ul>
 					</nav>
-				<?php endif; ?>
+				<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
 
 				<!-- Contact Info -->
-				<?php if ( ! empty( $options['show_contact'] ) ) : ?>
+				<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['show_contact'] ) ) : ?>
 					<address class="soldis-footer-contact">
-						<?php if ( ! empty( $phone ) ) : ?>
-							<a href="tel:<?php echo esc_attr( preg_replace( '/[^+\d]/', '', $phone ) ); ?>" class="soldis-footer-contact-item" aria-label="<?php esc_attr_e( 'Phone', 'soldis-landing' ); ?>">
+						<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $phone ) ) : ?>
+							<a href="tel:<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_attr( preg_replace( '/[^+\d]/', '', $phone ) ); ?>" class="soldis-footer-contact-item" aria-label="<?php defined( 'ABSPATH' ) || exit;
+
+esc_attr_e( 'Phone', 'soldis-landing' ); ?>">
 								<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
 									<path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 015.13 12.71 19.79 19.79 0 012.06 4.11 2 2 0 014 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
 								</svg>
-								<span><?php echo esc_html( $phone ); ?></span>
+								<span><?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $phone ); ?></span>
 							</a>
-						<?php endif; ?>
-						<?php if ( ! empty( $email ) ) : ?>
-							<a href="mailto:<?php echo esc_attr( $email ); ?>" class="soldis-footer-contact-item" aria-label="<?php esc_attr_e( 'Email', 'soldis-landing' ); ?>">
+						<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
+						<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $email ) ) : ?>
+							<a href="mailto:<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_attr( $email ); ?>" class="soldis-footer-contact-item" aria-label="<?php defined( 'ABSPATH' ) || exit;
+
+esc_attr_e( 'Email', 'soldis-landing' ); ?>">
 								<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
 									<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
 								</svg>
-								<span><?php echo esc_html( $email ); ?></span>
+								<span><?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $email ); ?></span>
 							</a>
-						<?php endif; ?>
-						<?php if ( ! empty( $address ) ) : ?>
-							<?php $addr_tag = ! empty( $gmaps_url ) ? '<a href="' . esc_url( $gmaps_url ) . '" target="_blank" rel="noopener noreferrer" class="soldis-footer-contact-item">' : '<span class="soldis-footer-contact-item">'; ?>
-							<?php $addr_end = ! empty( $gmaps_url ) ? '</a>' : '</span>'; ?>
-							<?php echo $addr_tag; // Safe — built above ?>
+						<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
+						<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $address ) ) : ?>
+							<?php defined( 'ABSPATH' ) || exit;
+
+$addr_tag = ! empty( $gmaps_url ) ? '<a href="' . esc_url( $gmaps_url ) . '" target="_blank" rel="noopener noreferrer" class="soldis-footer-contact-item">' : '<span class="soldis-footer-contact-item">'; ?>
+							<?php defined( 'ABSPATH' ) || exit;
+
+$addr_end = ! empty( $gmaps_url ) ? '</a>' : '</span>'; ?>
+							<?php defined( 'ABSPATH' ) || exit;
+
+echo $addr_tag; // Safe — built above ?>
 								<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
 									<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
 								</svg>
-								<span><?php echo esc_html( $address ); ?></span>
-							<?php echo $addr_end; // Safe — built above ?>
-						<?php endif; ?>
+								<span><?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $address ); ?></span>
+							<?php defined( 'ABSPATH' ) || exit;
+
+echo $addr_end; // Safe — built above ?>
+						<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
 					</address>
-				<?php endif; ?>
+				<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
 
 			</div><!-- /.soldis-footer-middle -->
-			<?php endif; ?>
+			<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
 
 			<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 			     BOTTOM: Legal Bar
@@ -181,41 +289,91 @@ if ( ! empty( $options['logo_link_type'] ) && $options['logo_link_type'] === 'cu
 			<div class="soldis-footer-bottom">
 
 				<div class="soldis-footer-legal">
-					<?php if ( ! empty( $options['show_copyright'] ) && ! empty( $options['copyright_text'] ) ) : ?>
-						<span class="soldis-footer-copyright"><?php echo esc_html( $options['copyright_text'] ); ?></span>
-					<?php endif; ?>
+					<?php defined( 'ABSPATH' ) || exit;
 
-					<?php if ( ! empty( $options['show_privacy'] ) && ! empty( $options['privacy_url'] ) ) : ?>
-						<a href="<?php echo esc_url( $options['privacy_url'] ); ?>" class="soldis-footer-legal-link">
-							<?php echo esc_html( $options['privacy_label'] ?: 'Privatumo politika' ); ?>
-						</a>
-					<?php endif; ?>
+if ( ! empty( $options['show_copyright'] ) && ! empty( $options['copyright_text'] ) ) : ?>
+						<span class="soldis-footer-copyright"><?php defined( 'ABSPATH' ) || exit;
 
-					<?php if ( ! empty( $options['show_terms'] ) && ! empty( $options['terms_url'] ) ) : ?>
-						<a href="<?php echo esc_url( $options['terms_url'] ); ?>" class="soldis-footer-legal-link">
-							<?php echo esc_html( $options['terms_label'] ?: 'Naudojimo sąlygos' ); ?>
+echo esc_html( $options['copyright_text'] ); ?></span>
+					<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
+
+					<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['show_privacy'] ) && ! empty( $options['privacy_url'] ) ) : ?>
+						<a href="<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_url( $options['privacy_url'] ); ?>" class="soldis-footer-legal-link">
+							<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $options['privacy_label'] ?: 'Privatumo politika' ); ?>
 						</a>
-					<?php endif; ?>
+					<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
+
+					<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['show_terms'] ) && ! empty( $options['terms_url'] ) ) : ?>
+						<a href="<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_url( $options['terms_url'] ); ?>" class="soldis-footer-legal-link">
+							<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $options['terms_label'] ?: 'Naudojimo sąlygos' ); ?>
+						</a>
+					<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
 				</div><!-- /.soldis-footer-legal -->
 
-				<?php if ( ! empty( $options['show_credit'] ) && ! empty( $options['credit_text'] ) ) : ?>
+				<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['show_credit'] ) && ! empty( $options['credit_text'] ) ) : ?>
 					<div class="soldis-footer-credit">
 						<?php
-						$parts = explode( 'OPA Reklama', $options['credit_text'] );
+						defined( 'ABSPATH' ) || exit;
+
+$parts = explode( 'OPA Reklama', $options['credit_text'] );
 						if ( count( $parts ) === 2 && ! empty( $options['credit_url'] ) ) :
 						?>
-							<?php echo esc_html( $parts[0] ); ?><a href="<?php echo esc_url( $options['credit_url'] ); ?>" target="_blank" rel="noopener noreferrer" class="soldis-footer-credit-link">OPA Reklama</a><?php echo esc_html( $parts[1] ); ?>
-						<?php else : ?>
-							<?php if ( ! empty( $options['credit_url'] ) ) : ?>
-								<a href="<?php echo esc_url( $options['credit_url'] ); ?>" target="_blank" rel="noopener noreferrer" class="soldis-footer-credit-link">
-									<?php echo esc_html( $options['credit_text'] ); ?>
+							<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $parts[0] ); ?><a href="<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_url( $options['credit_url'] ); ?>" target="_blank" rel="noopener noreferrer" class="soldis-footer-credit-link">OPA Reklama</a><?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $parts[1] ); ?>
+						<?php defined( 'ABSPATH' ) || exit;
+
+else : ?>
+							<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['credit_url'] ) ) : ?>
+								<a href="<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_url( $options['credit_url'] ); ?>" target="_blank" rel="noopener noreferrer" class="soldis-footer-credit-link">
+									<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $options['credit_text'] ); ?>
 								</a>
-							<?php else : ?>
-								<?php echo esc_html( $options['credit_text'] ); ?>
-							<?php endif; ?>
-						<?php endif; ?>
+							<?php defined( 'ABSPATH' ) || exit;
+
+else : ?>
+								<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $options['credit_text'] ); ?>
+							<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
+						<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
 					</div>
-				<?php endif; ?>
+				<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
 
 			</div><!-- /.soldis-footer-bottom -->
 
@@ -225,8 +383,11 @@ if ( ! empty( $options['logo_link_type'] ) && $options['logo_link_type'] === 'cu
 </footer>
 
 <!-- Scroll to Top Button -->
-<button class="soldis-scroll-top" id="soldis-scroll-top" aria-label="<?php esc_attr_e( 'Scroll to top', 'soldis-landing' ); ?>" aria-hidden="true">
+<button class="soldis-scroll-top" id="soldis-scroll-top" aria-label="<?php defined( 'ABSPATH' ) || exit;
+
+esc_attr_e( 'Scroll to top', 'soldis-landing' ); ?>" aria-hidden="true">
 	<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
 		<polyline points="18 15 12 9 6 15"/>
 	</svg>
 </button>
+

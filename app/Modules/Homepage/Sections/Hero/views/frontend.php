@@ -1,4 +1,6 @@
 <?php
+defined( 'ABSPATH' ) || exit;
+
 /**
  * Hero Section Frontend View
  * 
@@ -33,18 +35,30 @@ if (!function_exists('soldis_get_icon')) {
 		<div class="soldis-hero-grid">
 			
 			<!-- Content Column -->
-			<div class="soldis-hero-content <?php echo ! empty( $options['enable_animation'] ) ? 'soldis-animate-fade-up' : ''; ?>">
-				<?php if ( ! empty( $options['eyebrow'] ) ) : ?>
+			<div class="soldis-hero-content <?php defined( 'ABSPATH' ) || exit;
+
+echo ! empty( $options['enable_animation'] ) ? 'soldis-animate-fade-up' : ''; ?>">
+				<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['eyebrow'] ) ) : ?>
 					<div class="soldis-hero-eyebrow">
 						<span class="soldis-eyebrow-dot"></span>
-						<?php echo esc_html( $options['eyebrow'] ); ?>
-					</div>
-				<?php endif; ?>
+						<?php defined( 'ABSPATH' ) || exit;
 
-				<?php if ( ! empty( $options['heading'] ) ) : ?>
+echo esc_html( $options['eyebrow'] ); ?>
+					</div>
+				<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
+
+				<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['heading'] ) ) : ?>
 					<h1 class="soldis-hero-heading">
 						<?php 
-						$heading = esc_html( $options['heading'] );
+						defined( 'ABSPATH' ) || exit;
+
+$heading = esc_html( $options['heading'] );
 						if ( ! empty( $options['highlight'] ) ) {
 							$highlight = esc_html( $options['highlight'] );
 							$heading = str_replace( $highlight, '<span class="soldis-text-highlight">' . $highlight . '</span>', $heading );
@@ -52,49 +66,105 @@ if (!function_exists('soldis_get_icon')) {
 						echo $heading; 
 						?>
 					</h1>
-				<?php endif; ?>
+				<?php defined( 'ABSPATH' ) || exit;
 
-				<?php if ( ! empty( $options['description'] ) ) : ?>
-					<p class="soldis-hero-description"><?php echo esc_html( $options['description'] ); ?></p>
-				<?php endif; ?>
+endif; ?>
+
+				<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['description'] ) ) : ?>
+					<p class="soldis-hero-description"><?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $options['description'] ); ?></p>
+				<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
 
 				<div class="soldis-hero-actions">
-					<?php if ( ! empty( $options['btn_primary_label'] ) ) : ?>
-						<a href="<?php echo esc_url( $options['btn_primary_url'] ); ?>" class="soldis-btn soldis-btn-primary" target="<?php echo esc_attr( $options['btn_primary_target'] ); ?>" <?php echo $options['btn_primary_target'] === '_blank' ? 'rel="noopener noreferrer"' : ''; ?>>
-							<?php echo esc_html( $options['btn_primary_label'] ); ?>
-							<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 6px;" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-						</a>
-					<?php endif; ?>
+					<?php defined( 'ABSPATH' ) || exit;
 
-					<?php if ( ! empty( $options['btn_secondary_enable'] ) && ! empty( $options['btn_secondary_label'] ) ) : ?>
-						<a href="<?php echo esc_url( $options['btn_secondary_url'] ); ?>" class="soldis-btn soldis-btn-secondary" target="<?php echo esc_attr( $options['btn_secondary_target'] ); ?>" <?php echo $options['btn_secondary_target'] === '_blank' ? 'rel="noopener noreferrer"' : ''; ?>>
-							<?php echo esc_html( $options['btn_secondary_label'] ); ?>
+if ( ! empty( $options['btn_primary_label'] ) ) : ?>
+						<a href="<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_url( $options['btn_primary_url'] ); ?>" class="soldis-btn soldis-btn-primary" target="<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_attr( $options['btn_primary_target'] ); ?>" <?php defined( 'ABSPATH' ) || exit;
+
+echo $options['btn_primary_target'] === '_blank' ? 'rel="noopener noreferrer"' : ''; ?>>
+							<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $options['btn_primary_label'] ); ?>
 							<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 6px;" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
 						</a>
-					<?php endif; ?>
+					<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
+
+					<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['btn_secondary_enable'] ) && ! empty( $options['btn_secondary_label'] ) ) : ?>
+						<a href="<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_url( $options['btn_secondary_url'] ); ?>" class="soldis-btn soldis-btn-secondary" target="<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_attr( $options['btn_secondary_target'] ); ?>" <?php defined( 'ABSPATH' ) || exit;
+
+echo $options['btn_secondary_target'] === '_blank' ? 'rel="noopener noreferrer"' : ''; ?>>
+							<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $options['btn_secondary_label'] ); ?>
+							<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 6px;" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+						</a>
+					<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
 				</div>
 
-				<?php if ( ! empty( $options['trust_items'] ) ) : ?>
+				<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['trust_items'] ) ) : ?>
 					<div class="soldis-hero-trust-row">
-						<?php foreach ( $options['trust_items'] as $item ) : ?>
-							<?php if ( ! empty( $item['enabled'] ) && ! empty( $item['title'] ) ) : ?>
+						<?php defined( 'ABSPATH' ) || exit;
+
+foreach ( $options['trust_items'] as $item ) : ?>
+							<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $item['enabled'] ) && ! empty( $item['title'] ) ) : ?>
 								<div class="soldis-trust-item">
 									<div class="soldis-trust-icon-wrap">
-										<?php echo soldis_get_icon($item['icon']); ?>
+										<?php defined( 'ABSPATH' ) || exit;
+
+echo soldis_get_icon($item['icon']); ?>
 									</div>
 									<div class="soldis-trust-text">
-										<strong><?php echo esc_html( $item['title'] ); ?></strong>
-										<?php if ( ! empty( $item['desc'] ) ) : ?>
-											<span><?php echo esc_html( $item['desc'] ); ?></span>
-										<?php endif; ?>
+										<strong><?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $item['title'] ); ?></strong>
+										<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $item['desc'] ) ) : ?>
+											<span><?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $item['desc'] ); ?></span>
+										<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
 									</div>
 								</div>
-							<?php endif; ?>
-						<?php endforeach; ?>
-					</div>
-				<?php endif; ?>
+							<?php defined( 'ABSPATH' ) || exit;
 
-				<?php if ( ! empty( $options['ratings_enable'] ) ) : ?>
+endif; ?>
+						<?php defined( 'ABSPATH' ) || exit;
+
+endforeach; ?>
+					</div>
+				<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
+
+				<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['ratings_enable'] ) ) : ?>
 					<div class="soldis-hero-ratings">
 						<div class="soldis-avatars-group">
 							<div class="soldis-avatar"></div>
@@ -104,66 +174,133 @@ if (!function_exists('soldis_get_icon')) {
 						</div>
 						<div class="soldis-ratings-text">
 							<div class="soldis-stars">
-								★★★★★ <strong><?php echo esc_html( $options['ratings_score'] ); ?></strong>
+								★★★★★ <strong><?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $options['ratings_score'] ); ?></strong>
 							</div>
-							<p><?php echo esc_html( $options['ratings_text'] ); ?></p>
+							<p><?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $options['ratings_text'] ); ?></p>
 						</div>
 					</div>
-				<?php endif; ?>
+				<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
 			</div>
 
 			<!-- Image Column with Curved Organic Frame -->
-			<?php if ( ! empty( $options['hero_image_enable'] ) && ! empty( $options['hero_image'] ) ) : ?>
-				<div class="soldis-hero-image-wrap <?php echo ! empty( $options['enable_animation'] ) ? 'soldis-animate-fade-in' : ''; ?>">
+			<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['hero_image_enable'] ) && ! empty( $options['hero_image'] ) ) : ?>
+				<div class="soldis-hero-image-wrap <?php defined( 'ABSPATH' ) || exit;
+
+echo ! empty( $options['enable_animation'] ) ? 'soldis-animate-fade-in' : ''; ?>">
 					
 					<div class="soldis-hero-image-frame">
-						<img src="<?php echo esc_url( $options['hero_image'] ); ?>" alt="<?php echo esc_attr( $options['hero_alt'] ); ?>" class="soldis-hero-main-img" fetchpriority="high" loading="eager" decoding="async">
+						<img src="<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_url( $options['hero_image'] ); ?>" alt="<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_attr( $options['hero_alt'] ); ?>" class="soldis-hero-main-img" fetchpriority="high" loading="eager" decoding="async">
 						
-						<?php if ( ! empty( $options['glass_cards'] ) ) : ?>
+						<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['glass_cards'] ) ) : ?>
 							<div class="soldis-hero-glass-cards">
-								<?php foreach ( $options['glass_cards'] as $index => $card ) : ?>
-									<?php if ( ! empty( $card['enabled'] ) && ! empty( $card['title'] ) ) : ?>
-										<div class="soldis-glass-card soldis-glass-card-pos-<?php echo esc_attr( $index ); ?>">
+								<?php defined( 'ABSPATH' ) || exit;
+
+foreach ( $options['glass_cards'] as $index => $card ) : ?>
+									<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $card['enabled'] ) && ! empty( $card['title'] ) ) : ?>
+										<div class="soldis-glass-card soldis-glass-card-pos-<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_attr( $index ); ?>">
 											<div class="soldis-glass-icon-wrap">
-												<?php echo soldis_get_icon($card['icon']); ?>
+												<?php defined( 'ABSPATH' ) || exit;
+
+echo soldis_get_icon($card['icon']); ?>
 											</div>
 											<div class="soldis-glass-card-content">
-												<strong><?php echo esc_html( $card['title'] ); ?></strong>
-												<?php if ( ! empty( $card['subtitle'] ) ) : ?>
-													<span><?php echo esc_html( $card['subtitle'] ); ?></span>
-												<?php endif; ?>
+												<strong><?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $card['title'] ); ?></strong>
+												<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $card['subtitle'] ) ) : ?>
+													<span><?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $card['subtitle'] ); ?></span>
+												<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
 											</div>
 										</div>
-									<?php endif; ?>
-								<?php endforeach; ?>
+									<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
+								<?php defined( 'ABSPATH' ) || exit;
+
+endforeach; ?>
 							</div>
-						<?php endif; ?>
+						<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
 					</div>
 				</div>
-			<?php endif; ?>
+			<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
 
 		</div>
 		
 		<!-- Bottom Stats Bar -->
-		<?php if ( ! empty( $options['bottom_stats'] ) ) : ?>
-			<div class="soldis-hero-bottom-bar <?php echo ! empty( $options['enable_animation'] ) ? 'soldis-animate-fade-up' : ''; ?>">
-				<?php foreach ( $options['bottom_stats'] as $stat ) : ?>
-					<?php if ( ! empty( $stat['enabled'] ) && ! empty( $stat['title'] ) ) : ?>
+		<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['bottom_stats'] ) ) : ?>
+			<div class="soldis-hero-bottom-bar <?php defined( 'ABSPATH' ) || exit;
+
+echo ! empty( $options['enable_animation'] ) ? 'soldis-animate-fade-up' : ''; ?>">
+				<?php defined( 'ABSPATH' ) || exit;
+
+foreach ( $options['bottom_stats'] as $stat ) : ?>
+					<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $stat['enabled'] ) && ! empty( $stat['title'] ) ) : ?>
 						<div class="soldis-bottom-stat-item">
-							<div class="soldis-bottom-stat-icon <?php echo esc_attr( 'color-' . $stat['color'] ); ?>">
-								<?php echo soldis_get_icon($stat['icon']); ?>
+							<div class="soldis-bottom-stat-icon <?php defined( 'ABSPATH' ) || exit;
+
+echo esc_attr( 'color-' . $stat['color'] ); ?>">
+								<?php defined( 'ABSPATH' ) || exit;
+
+echo soldis_get_icon($stat['icon']); ?>
 							</div>
 							<div class="soldis-bottom-stat-text">
-								<strong><?php echo esc_html( $stat['title'] ); ?></strong>
-								<?php if ( ! empty( $stat['subtitle'] ) ) : ?>
-									<span><?php echo esc_html( $stat['subtitle'] ); ?></span>
-								<?php endif; ?>
+								<strong><?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $stat['title'] ); ?></strong>
+								<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $stat['subtitle'] ) ) : ?>
+									<span><?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $stat['subtitle'] ); ?></span>
+								<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
 							</div>
 						</div>
-					<?php endif; ?>
-				<?php endforeach; ?>
+					<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
+				<?php defined( 'ABSPATH' ) || exit;
+
+endforeach; ?>
 			</div>
-		<?php endif; ?>
+		<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
 
 	</div>
 </section>
+

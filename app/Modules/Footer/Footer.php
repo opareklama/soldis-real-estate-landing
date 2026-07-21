@@ -1,5 +1,7 @@
 <?php
 
+defined( 'ABSPATH' ) || exit;
+
 namespace OpaReklama\SoldisLanding\Modules\Footer;
 
 /**
@@ -157,3 +159,4 @@ class Footer {
 		require SOLDIS_LANDING_PATH . 'app/Modules/Footer/views/frontend.php';
 	}
 }
+

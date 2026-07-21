@@ -1,5 +1,7 @@
 <?php
 
+defined( 'ABSPATH' ) || exit;
+
 namespace OpaReklama\SoldisLanding\Admin;
 
 /**
@@ -72,3 +74,4 @@ class Admin {
 		);
 	}
 }
+

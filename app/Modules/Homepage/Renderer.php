@@ -1,5 +1,7 @@
 <?php
 
+defined( 'ABSPATH' ) || exit;
+
 namespace OpaReklama\SoldisLanding\Modules\Homepage;
 
 use OpaReklama\SoldisLanding\Modules\Homepage\Sections\Hero\Renderer as HeroRenderer;
@@ -95,3 +97,4 @@ class Renderer {
 		return ob_get_clean();
 	}
 }
+

@@ -1,4 +1,6 @@
 <?php
+defined( 'ABSPATH' ) || exit;
+
 /**
  * Plugin Name:       SOLDIS Landing
  * Plugin URI:        https://opareklama.com
@@ -19,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! defined( 'SOLDIS_LANDING_VERSION' ) ) {
-	define( 'SOLDIS_LANDING_VERSION', '1.0.38' );
+	define( 'SOLDIS_LANDING_VERSION', '1.0.0' );
 }
 define( 'SOLDIS_LANDING_PATH', plugin_dir_path( __FILE__ ) );
 define( 'SOLDIS_LANDING_URL', plugin_dir_url( __FILE__ ) );
@@ -60,3 +62,4 @@ function run_soldis_landing() {
 	$plugin->run();
 }
 run_soldis_landing();
+

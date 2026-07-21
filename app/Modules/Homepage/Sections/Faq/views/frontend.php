@@ -1,4 +1,6 @@
 <?php
+defined( 'ABSPATH' ) || exit;
+
 /**
  * FAQ Section Frontend View
  * 
@@ -7,39 +9,69 @@
 
 $animation_class = ! empty( $options['enable_animation'] ) ? 'soldis-animate-fade-up' : '';
 ?>
-<section class="soldis-faq-section soldis-section" id="faq" aria-label="<?php echo esc_attr( $options['heading'] ); ?>" role="region">
+<section class="soldis-faq-section soldis-section" id="faq" aria-label="<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_attr( $options['heading'] ); ?>" role="region">
 	<div class="soldis-container">
 		
 		<div class="soldis-faq-layout">
 			
 			<!-- Header -->
-			<div class="soldis-faq-header <?php echo $animation_class; ?>">
-				<?php if ( ! empty( $options['eyebrow'] ) ) : ?>
+			<div class="soldis-faq-header <?php defined( 'ABSPATH' ) || exit;
+
+echo $animation_class; ?>">
+				<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['eyebrow'] ) ) : ?>
 					<div class="soldis-faq-eyebrow">
-						<?php echo esc_html( $options['eyebrow'] ); ?>
-					</div>
-				<?php endif; ?>
+						<?php defined( 'ABSPATH' ) || exit;
 
-				<?php if ( ! empty( $options['heading'] ) ) : ?>
+echo esc_html( $options['eyebrow'] ); ?>
+					</div>
+				<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
+
+				<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['heading'] ) ) : ?>
 					<h2 class="soldis-faq-heading">
-						<?php echo esc_html( $options['heading'] ); ?>
-					</h2>
-				<?php endif; ?>
+						<?php defined( 'ABSPATH' ) || exit;
 
-				<?php if ( ! empty( $options['description'] ) ) : ?>
+echo esc_html( $options['heading'] ); ?>
+					</h2>
+				<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
+
+				<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['description'] ) ) : ?>
 					<div class="soldis-faq-description">
-						<?php echo wpautop( esc_html( $options['description'] ) ); ?>
+						<?php defined( 'ABSPATH' ) || exit;
+
+echo wpautop( esc_html( $options['description'] ) ); ?>
 					</div>
-				<?php endif; ?>
+				<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
 			</div>
 
 			<!-- FAQ List -->
-			<div class="soldis-faq-list-wrap <?php echo $animation_class; ?>">
-				<?php if ( ! empty( $options['items'] ) ) : ?>
-					<div class="soldis-faq-list" role="tablist" aria-label="<?php esc_attr_e('Frequently Asked Questions', 'soldis-landing'); ?>">
+			<div class="soldis-faq-list-wrap <?php defined( 'ABSPATH' ) || exit;
+
+echo $animation_class; ?>">
+				<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['items'] ) ) : ?>
+					<div class="soldis-faq-list" role="tablist" aria-label="<?php defined( 'ABSPATH' ) || exit;
+
+esc_attr_e('Frequently Asked Questions', 'soldis-landing'); ?>">
 						
 						<?php 
-						foreach ( $options['items'] as $index => $item ) : 
+						defined( 'ABSPATH' ) || exit;
+
+foreach ( $options['items'] as $index => $item ) : 
 							if ( empty( $item['enabled'] ) || empty( $item['question'] ) ) {
 								continue;
 							}
@@ -52,17 +84,29 @@ $animation_class = ! empty( $options['enable_animation'] ) ? 'soldis-animate-fad
 							$tab_id = 'faq-tab-' . $index;
 						?>
 							
-							<div class="soldis-faq-item <?php echo $active_class; ?>">
+							<div class="soldis-faq-item <?php defined( 'ABSPATH' ) || exit;
+
+echo $active_class; ?>">
 								<div 
-									id="<?php echo esc_attr( $tab_id ); ?>"
+									id="<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_attr( $tab_id ); ?>"
 									class="soldis-faq-question js-soldis-faq-toggle" 
-									aria-expanded="<?php echo $expanded_attr; ?>" 
-									aria-controls="<?php echo esc_attr( $content_id ); ?>"
+									aria-expanded="<?php defined( 'ABSPATH' ) || exit;
+
+echo $expanded_attr; ?>" 
+									aria-controls="<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_attr( $content_id ); ?>"
 									role="button"
 									tabindex="0"
 								>
-									<span class="soldis-faq-number"><?php echo $number; ?></span>
-									<span class="soldis-faq-text"><?php echo esc_html( $item['question'] ); ?></span>
+									<span class="soldis-faq-number"><?php defined( 'ABSPATH' ) || exit;
+
+echo $number; ?></span>
+									<span class="soldis-faq-text"><?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $item['question'] ); ?></span>
 									<span class="soldis-faq-icon" aria-hidden="true">
 										<!-- Minimal Plus/Minus Icon -->
 										<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -73,24 +117,37 @@ $animation_class = ! empty( $options['enable_animation'] ) ? 'soldis-animate-fad
 								</div>
 								
 								<div 
-									id="<?php echo esc_attr( $content_id ); ?>"
+									id="<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_attr( $content_id ); ?>"
 									class="soldis-faq-answer-wrap" 
 									role="tabpanel" 
-									aria-labelledby="<?php echo esc_attr( $tab_id ); ?>"
-									<?php echo ! $is_open ? 'hidden' : ''; ?>
+									aria-labelledby="<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_attr( $tab_id ); ?>"
+									<?php defined( 'ABSPATH' ) || exit;
+
+echo ! $is_open ? 'hidden' : ''; ?>
 								>
 									<div class="soldis-faq-answer-inner">
-										<?php echo wpautop( esc_html( $item['answer'] ) ); ?>
+										<?php defined( 'ABSPATH' ) || exit;
+
+echo wpautop( esc_html( $item['answer'] ) ); ?>
 									</div>
 								</div>
 							</div>
 
-						<?php endforeach; ?>
+						<?php defined( 'ABSPATH' ) || exit;
+
+endforeach; ?>
 					</div>
-				<?php endif; ?>
+				<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
 			</div>
 
 		</div> <!-- /.soldis-faq-layout -->
 
 	</div> <!-- /.soldis-container -->
 </section>
+

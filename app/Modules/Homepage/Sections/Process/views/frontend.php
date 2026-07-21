@@ -1,4 +1,6 @@
 <?php
+defined( 'ABSPATH' ) || exit;
+
 /**
  * Process Section Frontend View
  * 
@@ -22,28 +24,50 @@ if (!function_exists('soldis_get_process_icon')) {
 
 $animation_class = ! empty( $options['enable_animation'] ) ? 'soldis-animate-fade-up' : '';
 ?>
-<section class="soldis-process-section soldis-section" id="process" aria-label="<?php echo esc_attr( $options['heading'] ); ?>" role="region">
+<section class="soldis-process-section soldis-section" id="process" aria-label="<?php defined( 'ABSPATH' ) || exit;
+
+echo esc_attr( $options['heading'] ); ?>" role="region">
 	<div class="soldis-container">
 		
 		<!-- Header -->
-		<div class="soldis-process-header <?php echo $animation_class; ?>">
-			<?php if ( ! empty( $options['eyebrow'] ) ) : ?>
+		<div class="soldis-process-header <?php defined( 'ABSPATH' ) || exit;
+
+echo $animation_class; ?>">
+			<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['eyebrow'] ) ) : ?>
 				<div class="soldis-process-eyebrow">
-					<?php echo esc_html( $options['eyebrow'] ); ?>
-				</div>
-			<?php endif; ?>
+					<?php defined( 'ABSPATH' ) || exit;
 
-			<?php if ( ! empty( $options['heading'] ) ) : ?>
+echo esc_html( $options['eyebrow'] ); ?>
+				</div>
+			<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
+
+			<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['heading'] ) ) : ?>
 				<h2 class="soldis-process-heading">
-					<?php echo esc_html( $options['heading'] ); ?>
-				</h2>
-			<?php endif; ?>
+					<?php defined( 'ABSPATH' ) || exit;
 
-			<?php if ( ! empty( $options['description'] ) ) : ?>
+echo esc_html( $options['heading'] ); ?>
+				</h2>
+			<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
+
+			<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['description'] ) ) : ?>
 				<div class="soldis-process-description">
-					<?php echo wpautop( esc_html( $options['description'] ) ); ?>
+					<?php defined( 'ABSPATH' ) || exit;
+
+echo wpautop( esc_html( $options['description'] ) ); ?>
 				</div>
-			<?php endif; ?>
+			<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
 		</div>
 
 		<!-- Scroll-Animated Timeline Pipeline -->
@@ -56,19 +80,29 @@ $animation_class = ! empty( $options['enable_animation'] ) ? 'soldis-animate-fad
 
 			<!-- The Steps -->
 			<div class="soldis-process-steps">
-				<?php if ( ! empty( $options['steps'] ) ) : ?>
-					<?php foreach ( $options['steps'] as $index => $step ) : ?>
-						<?php if ( ! empty( $step['enabled'] ) && ! empty( $step['title'] ) ) : ?>
+				<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['steps'] ) ) : ?>
+					<?php defined( 'ABSPATH' ) || exit;
+
+foreach ( $options['steps'] as $index => $step ) : ?>
+						<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $step['enabled'] ) && ! empty( $step['title'] ) ) : ?>
 							
 							<?php
-							// Format number (01, 02, etc.)
+							defined( 'ABSPATH' ) || exit;
+
+// Format number (01, 02, etc.)
 							$number = sprintf('%02d', $index + 1);
 							// Create alternating layout rhythm (left / right / left) if desired, 
 							// or just simple subtle margin shifts. Let's do a simple shift.
 							$shift_class = ($index % 2 === 0) ? 'is-shifted-left' : 'is-shifted-right';
 							?>
 
-							<div class="soldis-process-step js-soldis-process-step <?php echo $shift_class; ?>">
+							<div class="soldis-process-step js-soldis-process-step <?php defined( 'ABSPATH' ) || exit;
+
+echo $shift_class; ?>">
 								
 								<!-- Track Node -->
 								<div class="soldis-process-node" aria-hidden="true">
@@ -78,27 +112,43 @@ $animation_class = ! empty( $options['enable_animation'] ) ? 'soldis-animate-fad
 								<!-- Step Card -->
 								<div class="soldis-process-card">
 									<div class="soldis-process-card-bg-number" aria-hidden="true">
-										<?php echo $number; ?>
+										<?php defined( 'ABSPATH' ) || exit;
+
+echo $number; ?>
 									</div>
 									<div class="soldis-process-card-inner">
 										<div class="soldis-process-card-header">
-											<div class="soldis-process-card-number"><?php echo $number; ?></div>
+											<div class="soldis-process-card-number"><?php defined( 'ABSPATH' ) || exit;
+
+echo $number; ?></div>
 											<div class="soldis-process-card-icon">
-												<?php echo soldis_get_process_icon($step['icon']); ?>
+												<?php defined( 'ABSPATH' ) || exit;
+
+echo soldis_get_process_icon($step['icon']); ?>
 											</div>
 										</div>
-										<h3 class="soldis-process-card-title"><?php echo esc_html( $step['title'] ); ?></h3>
+										<h3 class="soldis-process-card-title"><?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $step['title'] ); ?></h3>
 										<div class="soldis-process-card-desc">
-											<?php echo wpautop( esc_html( $step['desc'] ) ); ?>
+											<?php defined( 'ABSPATH' ) || exit;
+
+echo wpautop( esc_html( $step['desc'] ) ); ?>
 										</div>
 									</div>
 								</div>
 								
 							</div>
 
-						<?php endif; ?>
-					<?php endforeach; ?>
-				<?php endif; ?>
+						<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
+					<?php defined( 'ABSPATH' ) || exit;
+
+endforeach; ?>
+				<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
 			</div>
 
 		</div> <!-- /.soldis-process-pipeline-wrap -->
@@ -106,19 +156,38 @@ $animation_class = ! empty( $options['enable_animation'] ) ? 'soldis-animate-fad
 	</div> <!-- /.soldis-container -->
 
 	<!-- Bottom Closing Banner (Full Width within section) -->
-	<?php if ( ! empty( $options['callout_enable'] ) ) : ?>
-		<div class="soldis-process-closing-wrap <?php echo $animation_class; ?>">
+	<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['callout_enable'] ) ) : ?>
+		<div class="soldis-process-closing-wrap <?php defined( 'ABSPATH' ) || exit;
+
+echo $animation_class; ?>">
 			<div class="soldis-container">
 				<div class="soldis-process-closing-banner">
-					<?php if ( ! empty( $options['callout_title'] ) ) : ?>
-						<h3 class="soldis-process-closing-title"><?php echo esc_html( $options['callout_title'] ); ?></h3>
-					<?php endif; ?>
-					<?php if ( ! empty( $options['callout_desc'] ) ) : ?>
-						<p class="soldis-process-closing-desc"><?php echo esc_html( $options['callout_desc'] ); ?></p>
-					<?php endif; ?>
+					<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['callout_title'] ) ) : ?>
+						<h3 class="soldis-process-closing-title"><?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $options['callout_title'] ); ?></h3>
+					<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
+					<?php defined( 'ABSPATH' ) || exit;
+
+if ( ! empty( $options['callout_desc'] ) ) : ?>
+						<p class="soldis-process-closing-desc"><?php defined( 'ABSPATH' ) || exit;
+
+echo esc_html( $options['callout_desc'] ); ?></p>
+					<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
 				</div>
 			</div>
 		</div>
-	<?php endif; ?>
+	<?php defined( 'ABSPATH' ) || exit;
+
+endif; ?>
 
 </section>
+

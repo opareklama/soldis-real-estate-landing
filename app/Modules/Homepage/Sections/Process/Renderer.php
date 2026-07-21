@@ -1,5 +1,7 @@
 <?php
 
+defined( 'ABSPATH' ) || exit;
+
 namespace OpaReklama\SoldisLanding\Modules\Homepage\Sections\Process;
 
 /**
@@ -91,3 +93,4 @@ class Renderer {
 		require SOLDIS_LANDING_PATH . 'app/Modules/Homepage/Sections/Process/views/frontend.php';
 	}
 }
+

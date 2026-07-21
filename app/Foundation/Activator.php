@@ -1,5 +1,7 @@
 <?php
 
+defined( 'ABSPATH' ) || exit;
+
 namespace OpaReklama\SoldisLanding\Foundation;
 
 /**
@@ -177,3 +179,4 @@ class Activator {
 		flush_rewrite_rules();
 	}
 }
+
