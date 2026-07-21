@@ -44,9 +44,11 @@ class Updater {
 	public function get_github_release() {
 		$transient_key = 'soldis_landing_github_release';
 
-		// Bypass cache if user clicked "Check again" on the Updates page
-		if ( ! empty( $_GET['force-check'] ) ) {
+		// Bypass cache ONLY ONCE per request if user clicked "Check again"
+		static $bypassed = false;
+		if ( ! empty( $_GET['force-check'] ) && ! $bypassed ) {
 			delete_transient( $transient_key );
+			$bypassed = true;
 		}
 
 		$release = get_transient( $transient_key );
